@@ -1,4 +1,4 @@
 #!/bin/bash
 
-grep ":""$1" -c
+grep " ""$1" -c
 
