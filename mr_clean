@@ -1,1 +1,1 @@
-find . -delete -regex '.*~\|#.*#'
+find -name "#*#" -delete -or -name "*~" -delete
