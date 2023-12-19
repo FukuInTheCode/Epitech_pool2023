@@ -6,7 +6,7 @@ if [ $# -eq 0 ]
 then
   cat my_tmp | wc -l
 else
-  cat my_tmp | grep "$1" | wc -l
+  cat my_tmp | grep -i ";""$1" | wc -l
 
 fi
 
