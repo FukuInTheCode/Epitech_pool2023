@@ -1,3 +1,3 @@
 #! /bin/bash
 
-find -type f ! -path "*/.*" ! -name "*.sh" | wc -l
+find -type f ! -path "*/.*" | wc -l
