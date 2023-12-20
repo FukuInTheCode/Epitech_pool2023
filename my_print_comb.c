@@ -1,4 +1,3 @@
-
 #include "my.h"
 
 void my_print_second(char n, char n2)
@@ -11,7 +10,7 @@ void my_print_second(char n, char n2)
             continue;
         my_putchar(',');
         my_putchar(' ');
-    } 
+    }
 }
 
 void my_print_first(char n)
@@ -23,6 +22,6 @@ void my_print_first(char n)
 int my_print_comb(void)
 {
     for (char i = '0'; i <= '7'; i++)
-        my_print_first(i);    
+        my_print_first(i);
     return 0;
 }

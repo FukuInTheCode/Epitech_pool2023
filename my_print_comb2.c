@@ -1,4 +1,3 @@
-
 #include "my.h"
 
 static void my_print_second(char i, char j)
