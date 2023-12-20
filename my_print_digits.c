@@ -1,4 +1,3 @@
-
 #include "my.h"
 
 int my_print_digits(void)
