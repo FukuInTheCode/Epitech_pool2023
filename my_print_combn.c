@@ -52,6 +52,8 @@ int my_print_combn(int n)
         if (i < end_border / 10)
             my_putchar('0');
         my_put_nbr(i);
+        if (is_end(nb) == 1)
+            break;
         my_putchar(',');
         my_putchar(' ');
     }
