@@ -38,4 +38,5 @@ int my_print_comb2(void)
             my_print_second(i, j);
         }
     }
+    return 0;
 }
