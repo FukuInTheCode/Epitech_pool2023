@@ -1,5 +1,5 @@
 
-void my_putchar(char c);
+#include "my.h"
 
 int my_print_digits(void)
 {
