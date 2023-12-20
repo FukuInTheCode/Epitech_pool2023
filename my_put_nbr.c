@@ -11,6 +11,10 @@ int my_put_nbr(int nb)
 {
     long rev_nb = 10;
 
+    if (nb == 0) {
+        my_putchar('0');
+        return 0;
+    }
     if (nb < 0) {
         nb *= -1;
         my_putchar('-');

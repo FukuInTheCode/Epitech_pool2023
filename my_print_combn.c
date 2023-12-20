@@ -13,7 +13,7 @@ static int gen_first(int n)
 
     for (int i = 1; i < n; i++)
         ret = (ret + i) * 10;
-    return ret;
+    return ret / 10;
 }
 
 static int gen_end(int n)
@@ -25,9 +25,32 @@ static int gen_end(int n)
     return ret;
 }
 
+static char is_right(int n, int i)
+{
+    char digit = i % 10;
+
+    i /= 10;
+    for (int j = 1; j < n && i != 0; j++) {
+        if (digit <= i % 10)
+            return 0;
+         digit = i % 10;
+        i /= 10;
+    }
+    return 1;
+}
+
 int my_print_combn(int n)
 {
-    my_put_nbr(gen_end(n));
-    // for (int i = gen_first(n); i < 
+    int end_border = gen_end(n);
+
+    for (int i = gen_first(n); i < end_border; i++) {
+        if (is_right(n, i) == 0)
+            continue;
+        if (i < end_border / 10)
+            my_putchar('0');
+        my_put_nbr(i);
+        my_putchar(',');
+        my_putchar(' ');
+    }
     return 0;
 }
