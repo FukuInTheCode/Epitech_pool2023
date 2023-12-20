@@ -14,6 +14,8 @@ static void my_min_put(void)
 
 static void my_print(int nb)
 {
+    long rev_nb = 10;
+
     if (nb < 0) {
         nb *= -1;
         my_putchar('-');
@@ -29,8 +31,6 @@ static void my_print(int nb)
 
 int my_put_nbr(int nb)
 {
-    long rev_nb = 10;
-
     if (nb == MIN_INTEGER) {
         my_min_put();
         return 0;
@@ -39,5 +39,6 @@ int my_put_nbr(int nb)
         my_putchar('0');
         return 0;
     }
+    my_print(nb);
     return 0;
 }

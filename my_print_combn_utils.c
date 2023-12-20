@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void is_end(int nb)
+int is_end_combn(int nb)
 {
     if (nb == 9)
         return 1;
