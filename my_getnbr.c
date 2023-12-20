@@ -12,27 +12,39 @@ static char is_int_stred(char c)
     return ('0' <= c && c <= '9');
 }
 
+static char is_sign_stred(char c)
+{
+    return ((c == '-') || (c == '+'));
+}
+
+
+static char get_the_sign(char const *str)
+{
+    char sign = 1;
+    int len = my_strlen(str);
+    for (int i = 0; i < len && is_sign_stred(str[i]) == 1; i++)
+        sign = -1 * sign * (str[i] == '-') + sign * (str[i] == '+');
+    return sign;
+}
+
 int my_getnbr(char const *str)
 {
+    long ret = 0;
+    char sign = get_the_sign(str);
     int len = my_strlen(str);
     char has_started = 0;
-    char sign = 1;
-    long abs_ret = 0;
 
-    for (int i = 0; i < len; i++) {
-        if (has_started == 1 && is_int_stred(str[i]) == 0)
+    for (int i = 0; i < len && (is_int_stred(str[i]) ||\
+                                is_sign_stred(str[i])); i++) {
+        if (is_sign_stred(str[i]) && has_started == 1)
             break;
-        if (str[i] == '-')
-            sign = -1;
-        if (has_started == 0 && str[i] != '-' && is_int_stred(str[i]) == 0)
-            sign = 1;
-        if (is_int_stred(str[i]) == 1) {
-            abs_ret = (abs_ret + str[i] - '0') * 10;
-            has_started = 1;
-        }
+        else if (is_sign_stred(str[i]))
+            continue;
+        ret *= 10;
+        ret += str[i] - '0';
+        has_started = 1;
+        if (ret * sign > MAX_INTEGER && ret * sign < MIN_INTEGER)
+            return 0;
     }
-    abs_ret /= 10;
-    if (sign * abs_ret > MAX_INTEGER || sign * abs_ret < MIN_INTEGER)
-        return 0;
-    return sign * abs_ret;
+    return sign * ret / 10;
 }
