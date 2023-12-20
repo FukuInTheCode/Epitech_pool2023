@@ -17,11 +17,11 @@ static char is_sign_stred(char c)
     return ((c == '-') || (c == '+'));
 }
 
-
 static char get_the_sign(char const *str)
 {
     char sign = 1;
     int len = my_strlen(str);
+
     for (int i = 0; i < len && is_sign_stred(str[i]) == 1; i++)
         sign = -1 * sign * (str[i] == '-') + sign * (str[i] == '+');
     return sign;
@@ -34,8 +34,7 @@ int my_getnbr(char const *str)
     int len = my_strlen(str);
     char has_started = 0;
 
-    for (int i = 0; i < len && (is_int_stred(str[i]) ||\
-                                is_sign_stred(str[i])); i++) {
+    for (int i = 0; i < len && GETNBR_CHECK; i++) {
         if (is_sign_stred(str[i]) && has_started == 1)
             break;
         if (is_sign_stred(str[i]))
