@@ -7,7 +7,10 @@ void my_print_second(char n, char n2)
 		my_putchar(n2);
 		my_putchar(n);
 		my_putchar(i);
-		my_putchar(' ');	
+		if (n2 == '7' && n == '8' && i == '9')
+			continue;
+		my_putchar(',');
+		my_putchar(' ');
 	} 
 }
 
