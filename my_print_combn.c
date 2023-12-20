@@ -44,15 +44,15 @@ int my_print_combn(int n)
     int end_border;
 
     end_border = gen_end(n);
-    if (n <= 0 || n >= 11)
+    if (n <= 0 || n >= 10)
         return 0;
     for (int i = gen_first(n); i < end_border; i++) {
         if (is_right(n, i) == 0)
             continue;
-        if (i < end_border / 10)
+        if (i < end_border / 10 && n != 1)
             my_putchar('0');
         my_put_nbr(i);
-        if (is_end_combn(n) == 1)
+        if (is_end_combn(n, i) == 1)
             break;
         my_putchar(',');
         my_putchar(' ');

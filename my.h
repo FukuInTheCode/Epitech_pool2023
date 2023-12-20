@@ -16,5 +16,5 @@
 void my_putchar(char c);
 int my_put_nbr(int nb);
 void my_printstr(char *str);
-int is_end_combn(int nb);
+int is_end_combn(int nb, int i);
 #endif
