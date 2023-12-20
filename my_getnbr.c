@@ -38,7 +38,7 @@ int my_getnbr(char const *str)
                                 is_sign_stred(str[i])); i++) {
         if (is_sign_stred(str[i]) && has_started == 1)
             break;
-        else if (is_sign_stred(str[i]))
+        if (is_sign_stred(str[i]))
         continue;
         ret *= 10;
         ret += str[i] - '0';
