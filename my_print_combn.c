@@ -33,7 +33,7 @@ static char is_right(int n, int i)
     for (int j = 1; j < n && i != 0; j++) {
         if (digit <= i % 10)
             return 0;
-         digit = i % 10;
+        digit = i % 10;
         i /= 10;
     }
     return 1;
@@ -41,8 +41,11 @@ static char is_right(int n, int i)
 
 int my_print_combn(int n)
 {
-    int end_border = gen_end(n);
+    int end_border;
 
+    end_border = gen_end(n);
+    if (n <= 0 || n >= 11)
+        return 0;
     for (int i = gen_first(n); i < end_border; i++) {
         if (is_right(n, i) == 0)
             continue;
