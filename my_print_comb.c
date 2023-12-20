@@ -1,5 +1,5 @@
 
-void my_putchar(char c);
+#include "my.h"
 
 void my_print_second(char n, char n2)
 {
