@@ -20,7 +20,7 @@ static void my_print_second(char i, char j)
     if (i == '9' && j == '9')
         return;
     for (char k = i; k <= '9'; k++) {
-        for (char l = j + 1 * (i == k); l <= '9'; l++) {
+        for (char l = k < j ? j + 1: '0'; l <= '9'; l++) {
             my_putchar(i);
             my_putchar(j);
             my_putchar(' ');
