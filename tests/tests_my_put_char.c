@@ -1,5 +1,11 @@
+/*
+** EPITECH PROJECT, 2023
+** Pool Day 04
+** File description:
+** Placeholder
+*/
 
-int my_put_nbr(int nb);
+#include "../my.h"
 
 int main(void)
 {

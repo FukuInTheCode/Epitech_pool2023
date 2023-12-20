@@ -7,9 +7,19 @@
 
 #include "my.h"
 
+static void my_min_put(void)
+{
+    my_printstr("-2147483648");
+}
+
 int my_put_nbr(int nb)
 {
     long rev_nb = 10;
+
+    if (nb == MIN_INTEGER) {
+        my_min_put();
+        return 0;
+    }
 
     if (nb == 0) {
         my_putchar('0');

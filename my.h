@@ -12,4 +12,5 @@
     #define MIN_INTEGER -2147483648
 void my_putchar(char c);
 int my_put_nbr(int nb);
+void my_printstr(char *str);
 #endif
