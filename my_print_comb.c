@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2023
+** Pool Day 03
+** File description:
+** Placeholder
+*/
+
 #include "my.h"
 
 void my_print_second(char n, char n2)
