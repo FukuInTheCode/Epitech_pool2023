@@ -39,12 +39,12 @@ int my_getnbr(char const *str)
         if (is_sign_stred(str[i]) && has_started == 1)
             break;
         else if (is_sign_stred(str[i]))
-            continue;
+        continue;
         ret *= 10;
         ret += str[i] - '0';
         has_started = 1;
-        if (ret * sign > MAX_INTEGER && ret * sign < MIN_INTEGER)
+        if (ret * sign > MAX_INTEGER || ret * sign < MIN_INTEGER)
             return 0;
     }
-    return sign * ret / 10;
+    return sign * ret;
 }
