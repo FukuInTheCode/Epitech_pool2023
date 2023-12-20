@@ -17,5 +17,5 @@ char *my_evil_str(char *str)
         str[i] = str[len - i - 1];
         str[len - i - 1] = temp;
     }
-    return str;
+    return &(str[0]);
 }
