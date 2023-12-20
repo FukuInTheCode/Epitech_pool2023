@@ -1,21 +1,21 @@
 
 #include "my.h"
 
-static void my_print(char n)
-{
-    for (char i = n + 1; i <= '9'; i++) {
-        my_putchar(n);
-        my_putchar(i);
-        if (n == '8' && i == '9')
-            continue;
-        my_putchar(',');
-        my_putchar(' ');
-    }
-}
-
 int my_print_comb2(void)
 {
-    for (char i = '0'; i <= '8'; i++)
-        my_print(i);
-    return 0;
+    for (char i = '0'; i <= '9'; i++) {
+        for (char j = '0'; j <= '9'; j++) {
+            for (char k = i; k <= '9'; k++) {
+                for  (char l = j + 1; l <= '9'; l++) {
+                    my_putchar(i);
+                    my_putchar(j);
+                    my_putchar(' ');
+                    my_putchar(k);
+                    my_putchar(l);
+                    my_putchar(',');
+                    my_putchar(' ');
+                }
+            }
+        }
+    }
 }
