@@ -17,8 +17,10 @@ static void is_end(char i, char j, char k, char l)
 
 static void my_print_second(char i, char j)
 {
+    if (i == '9' && j == '9')
+        return;
     for (char k = i; k <= '9'; k++) {
-        for (char l = j; l <= '9'; l++) {
+        for (char l = j + 1; l <= '9'; l++) {
             my_putchar(i);
             my_putchar(j);
             my_putchar(' ');
