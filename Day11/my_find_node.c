@@ -13,5 +13,7 @@ linked_list_t *my_find_node(linked_list_t const *begin, void const *data_ref,
     linked_list_t *tmp = begin;
 
     for (; tmp && cmp(tmp->data, data_ref); tmp = tmp->next);
-    return tmp;
+    if (!cmp(tmp->data, data_ref))
+        return tmp;
+    return NULL;
 }
