@@ -12,13 +12,15 @@ CFLAGS = -Werror -Wall -Wextra
 SRC	= main.c \
 	    operators.c
 
+DIR = $(pwd)
+
 all: clean build clean
 
 
 build: $(SRC)
-	@make -f ../lib/my/Makefile
-	@$(CC) $(CFLAGS) $(SRC) -L../lib/ -lmy
+	@cd ../lib/my && make && cd ../../do_op
+	@$(CC) $(CFLAGS) $(SRC) -L../lib -lmy
 
 clean:
-	@make -f ../lib/my/Makefile clean
+	@cd ../lib/my && make clean && cd ../../do_op
 	@rm -f *.out

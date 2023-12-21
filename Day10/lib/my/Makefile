@@ -18,4 +18,4 @@ build: *.c
 	@mv libmy.a ../
 
 clean:
-	@rm -f *.a
+	@rm -f ../*.a

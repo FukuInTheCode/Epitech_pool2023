@@ -22,14 +22,4 @@ int my_mul(int, int);
 int my_div(int, int);
 int my_mod(int, int);
 int my_usage(int, int);
-
-const struct operator OPERATORS_FUNCS[] = {
-    {"+", &my_add},
-    {"-", &my_sub},
-    {"/", &my_div},
-    {"*", &my_mul},
-    {"%", &my_mod},
-    {"", &my_usage}
-};
-
 #endif
