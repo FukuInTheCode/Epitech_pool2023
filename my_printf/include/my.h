@@ -82,6 +82,8 @@ int p_format_f(char **, va_list, my_flags_t *);
 
 int o_format_f(char **, va_list, my_flags_t *);
 
+int x_format_f(char **, va_list, my_flags_t *);
+
 int n_format_f(char **, va_list, my_flags_t *);
 int hhn_format_f(char **, va_list, my_flags_t *);
 int hn_format_f(char **, va_list, my_flags_t *);

@@ -1,60 +1,49 @@
 /*
 ** EPITECH PROJECT, 2023
-** my_printf di format
+** my_printf o format
 ** File description:
 ** di
 */
 
 #include "../include/my.h"
 
-static int di_format_f2(char **buf_di, unsigned nbr, my_flags_t *flgs)
+static int formating_buffer(char **buffer, my_flags_t *flgs)
 {
-    int tmp = my_strlen(*buf_di);
+    size_t len = my_strlen(*buffer);
 
-    if (my_strlen(*buf_di) < flgs->precision) {
-        for (int i = 0; i < flgs->precision - tmp; i++)
-            add_buffer(buf_di, "0", 1);
-    }
-    if ((my_strlen(*buf_di) < flgs->width) &&
-        (flgs->has_zero == 1) && (flgs->has_minus == 0)) {
-        for (int i = flgs->has_plus; i < flgs->width -tmp; i++)
-            add_buffer(buf_di, "0", 1);
-    }
-    if (flgs->has_plus)
-        add_buffer(buf_di, "+", 1);
-    if (flgs->has_space == 1 && flgs->has_plus == 0)
-        add_buffer(buf_di, " ", 1);
+    for (int i = 0; i++ < flgs->precision - (int)len;
+        add_buffer(buffer, "0", 1));
+    len = my_strlen(*buffer);
+    flgs->has_minus && my_revstr(*buffer);
+    for (int i = 0; i++ < flgs->width - (int)len;
+        add_buffer(buffer, " ", 1));
+    flgs->has_minus && my_revstr(*buffer);
     return 0;
 }
 
-static int init_buf(unsigned nbr, my_flags_t *flgs, char **buf_di)
+static int init_buffer(char **buffer, unsigned nbr, my_flags_t *flgs)
 {
-    if (nbr == 0 && flgs->precision == 0) {
-        *buf_di = malloc(1);
-        **buf_di = 0;
-    } else
-        *buf_di = my_putptr_base(nbr, "01234567");
+    char *tmp = NULL;
+
+    (flgs->precision != 0 || nbr != 0) &&
+        (tmp = my_putptr_base(nbr, "01234567"));
+    tmp && add_buffer(buffer, tmp, my_strlen(tmp));
+    free(tmp);
+    return 0;
 }
 
 int o_format_f(char **buffer, va_list args, my_flags_t *flgs)
 {
     unsigned nbr = va_arg(args, unsigned);
-    int tmp_len;
-    char *buf_di;
+    char *buf_o = malloc(1);
 
-    init_buf(nbr, flgs, &buf_di);
-    if (!buf_di)
-        return 84;
-    my_revstr(buf_di) && di_format_f2(&buf_di, nbr, flgs);
-    my_revstr(buf_di);
-    tmp_len = my_strlen(buf_di);
-    if (tmp_len < flgs->width) {
-        flgs->has_minus == 0 && my_revstr(buf_di);
-        for (int i = 0; i < flgs->width - tmp_len; i++)
-            add_buffer(&buf_di, " ", 1);
-        if (flgs->has_minus == 0)
-            my_revstr(buf_di);
-    }
-    add_buffer(buffer, buf_di, my_strlen(buf_di));
+    *buf_o = 0;
+    init_buffer(&buf_o, nbr, flgs);
+    flgs->has_hastag && my_revstr(buf_o) &&
+        (add_buffer(&buf_o, "0", 1) || 1) && my_revstr(buf_o);
+    my_revstr(buf_o) && (formating_buffer(&buf_o, flgs) || 1) &&
+        my_revstr(buf_o);
+    add_buffer(buffer, buf_o, my_strlen(buf_o));
+    free(buf_o);
     return 0;
 }
