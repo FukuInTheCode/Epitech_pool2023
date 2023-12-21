@@ -6,6 +6,7 @@
 ##
 
 SRC	=	main.c	\
+		rush3.c	\
 
 OBJ = $(SRC:.c=.o)
 
@@ -20,7 +21,7 @@ all : $(NAME)
 lib :
 	make -C./lib/my re
 
-$(NAME) : $(OBJ) lib
+$(NAME) : lib $(OBJ)
 	gcc -o $(NAME) $(OBJ) -L lib/my -l my
 
 clean:
