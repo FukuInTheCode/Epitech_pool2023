@@ -7,7 +7,8 @@
 
 NAME   = cat
 
-SRC    = main.c
+SRC    = main.c \
+            cat.c
 
 CC	   = cc
 
