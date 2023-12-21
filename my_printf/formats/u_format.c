@@ -22,7 +22,7 @@ int u_format_f(char **buffer, va_list args, my_flags_t *flgs)
     }
     if ((tmp < flgs->width) &&
         (flgs->has_zero == 1) && (flgs->has_minus == 0)) {
-        for (int i = (nbr < 0 || flgs->has_plus); flgs->width - tmp; i++)
+        for (int i = (nbr < 0 || flgs->has_plus); i < flgs->width - tmp; i++)
             add_buffer(&buf_u, " ", 1);
     }
     my_revstr(buf_u);
