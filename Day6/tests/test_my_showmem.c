@@ -9,7 +9,7 @@
 
 Test(my_showmem, ram_infos)
 {
-    char str[] = "Hello je suis une merde totale";
+    char str[] = "Hello je suis \n une merde totale";
     my_showmem(str, sizeof(str));
-    my_showmem(str, sizeof(str) - 1);
+    my_showmem(str, sizeof(str));
 }

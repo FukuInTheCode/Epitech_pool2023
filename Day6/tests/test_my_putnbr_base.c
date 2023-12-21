@@ -39,6 +39,6 @@ Test(my_putnbr_base, convert_int_to_given_base5, .init = cr_redirect_stdout)
 
 Test(my_putnbr_base, convert_int_to_given_base11, .init = cr_redirect_stdout)
 {
-    my_putnbr_base(0, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-    cr_assert_stdout_eq_str("A");
+    cr_assert(my_putnbr_base(42, "") == 0);
+    cr_assert_stdout_eq_str("");
 }

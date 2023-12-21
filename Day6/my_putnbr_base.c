@@ -13,6 +13,8 @@ int my_putnbr_base(int nbr, char const *base)
     char new_n[32] = {'\0'};
     int i = 0;
 
+    if (*base == '\0')
+        return 0;
     for (int i = 0; base[i] != '\0'; i++)
         len++;
     if (nbr == 0)
