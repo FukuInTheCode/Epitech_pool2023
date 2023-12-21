@@ -12,7 +12,7 @@ static char to_lower(char a)
     return a;
 }
 
-int rush(char *str , char a)
+int rush_count(char *str, char a)
 {
     int j = 0;
 

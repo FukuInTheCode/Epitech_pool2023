@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
         write(1, argv[i], 1);
         write(1, ":", 1);
         my_put_nbr(rush( argv[1], *(argv[i])));
+        write(1, "\n", 1);
     }
     return 0;
 }
