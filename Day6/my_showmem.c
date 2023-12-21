@@ -16,25 +16,22 @@ static int show_char(char c)
     return write(1, &tmp, 1);
 }
 
-static void show_line_adress(unsigned long mem)
+static void show_line_adress(int n)
 {
-    char *base_hex = "0123456789abcdef";
-    char new_n[32] = {0};
-    int i = 0;
-
-    for (; mem != 0; mem /= 16)
-        new_n[i++] = base_hex[mem % 16];
-    for (int j = i - 1; j >= 0; j--)
-        write(1, new_n + j, 1);
-    write(1, ": ", 3);
+    char adress[8] = {0};
+    for (int i = 7; i >= 0; n /= 10)
+        adress[i--] = '0' + n % 10;
+    write(1, adress, 8);
+    write(1, ": ", 2);
 }
 
 int my_showmem(char const *str, int size)
 {
     int j;
+    int i2 = 0;
 
     for (int i = 0; i < size; i += 16) {
-        show_line_adress((unsigned long)(str + i));
+        show_line_adress(i2);
         for (j = 0; j < 16 && i + j + 1 < size; j++) {
             write(1, "0", (str[i + j] < 16));
             my_putnbr_base(str[i + j], "0123456789abcdef");
@@ -46,6 +43,7 @@ int my_showmem(char const *str, int size)
         for (int j = 0; j < 16 && i + j < size; j++)
             show_char(str[i + j]);
         write(1, "\n", 1);
+        i2 += 10;
     }
     return 0;
 }

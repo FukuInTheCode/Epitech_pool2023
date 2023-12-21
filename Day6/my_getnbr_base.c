@@ -30,7 +30,7 @@ int my_getnbr_base(char const *str, char const *base)
     for (int i = 0; str[i] != '\0'; i++) {
         id = find_power(str[i], base);
         if (id == -1)
-            return 0;
+            break;
         if (id == -2) {
             sign *= (str[i] == '+') - (str[i] == '-');
             continue;
