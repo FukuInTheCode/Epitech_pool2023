@@ -32,7 +32,8 @@ void draw(int x, int y, char *str)
         for (int j = 0; i < x - 2; i++) {
             my_putchar(' ');
         }
-        my_putchar(str[1]);
+        if (x == 1)
+            my_putchar(str[1]);
         my_putchar('\n');
     }
     print_last(x, y, str);
