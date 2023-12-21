@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void btree_apply_prefix(btree_t *root, int(*applyf)(void *))
+void btree_apply_suffix(btree_t *root, int(*applyf)(void *))
 {
     if (!root)
         return;
