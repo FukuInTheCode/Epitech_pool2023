@@ -8,11 +8,11 @@
 #ifndef RUSH3_H
     #define RUSH3_H
     #include <unistd.h>
-    #include <criterion/criterion.h>
-    #include <criterion/redirect.h>
     #include <stdio.h>
     #include <stdint.h>
     #include <errno.h>
+    #include <criterion/criterion.h>
+    #include <criterion/redirect.h>
 
     #define MAX_INTEGER 2147483647
     #define MIN_INTEGER -2147483648
@@ -67,4 +67,20 @@ int my_find_prime_sup(int);
 char *my_strstr(char *str, char const *);
 int my_sort_word_array(char **);
 int my_advanced_sort_word_array(char **, SORTING_FUNC);
+
+typedef int(*rush_func)();
+
+typedef struct {
+    char *s;
+    rush_func f;
+} my_struct_t;
+
+static my_struct_t const corner_0[] = {
+    {"o", rush1_1},
+    {"/", rush1_2},
+    {"A", rush1_345},
+    {"B", rush1_345_line}
+    {NULL, NULL}
+};
+
 #endif
