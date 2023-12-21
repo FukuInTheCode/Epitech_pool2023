@@ -5,6 +5,8 @@
 ** my_put_nbr but for unsigned nbr
 */
 
+#include "../include/my.h"
+
 char *my_put_unbr(unsigned int nb)
 {
     char *buffer = malloc(1);
