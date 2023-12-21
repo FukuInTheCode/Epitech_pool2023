@@ -23,6 +23,10 @@ Build:
 	@make -C../lib/my
 	@$(CC) $(CFLAGS) -c $(SRC) -L../lib -lmy
 
+tests_run:
+	@$(CC) $(CFLAGS) cat.c ../tests/test_cat.c -L../lib -lmy -lcriterion -o ../tests/test_run
+	@cd ../tests && ./test_run && rm ./test_run && cd ../cat
+
 clean:
 	@rm -f *.o
 
