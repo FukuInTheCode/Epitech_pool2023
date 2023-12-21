@@ -23,7 +23,7 @@ Test(my_str_to_word_array, convert_str_arr_word)
 
 Test(my_str_to_word_array, with_nchar_that_are_next)
 {
-    char *input = "For\n\n\n\nThe\n\nAlliance\n";
+    char *input = "\n\nFor\n\n\n\nThe\n\nAlliance\n";
     char **output = my_str_to_word_array(input);
     char *expected[] = {"For", "The", "Alliance"};
 

@@ -23,9 +23,18 @@ static void init_tmp(size_t count, char ***ret, char **tmp, char const *str)
         (*tmp)[i] -= (*tmp)[i] * (is_alphanum((*tmp)[i]) == 0);
 }
 
+static int count_first_non_alpha(char const *str)
+{
+    int i = 0;
+
+    for (; str[i] && !is_alphanum(str[i]); i++)
+        continue;
+    return i;
+}
+
 static size_t fill_arr(char const *str, char *tmp, char **ret, size_t sub_i)
 {
-    for (int i = 0; i < my_strlen(str); i++) {
+    for (int i = count_first_non_alpha(str); i < my_strlen(str); i++) {
         if (tmp[i] != '\0' || (tmp[i] == 0 && tmp[i + 1] == 0))
             continue;
         ret[sub_i] = malloc(my_strlen(tmp + i + 1) + 1);
@@ -48,7 +57,7 @@ char **my_str_to_word_array(char const *str)
     }
     init_tmp(count, &ret, &tmp, str);
     ret[sub_i] = malloc(my_strlen(tmp) + 1);
-    my_strcpy(ret[sub_i++], tmp);
+    my_strcpy(ret[sub_i++], tmp + count_first_non_alpha(str));
     sub_i = fill_arr(str, tmp, ret, sub_i);
     ret[sub_i] = NULL;
     free(tmp);
