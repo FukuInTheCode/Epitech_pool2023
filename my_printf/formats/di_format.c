@@ -9,11 +9,11 @@
 
 void di_format_f2(char **buf_di, int nbr, my_flags_t *flgs)
 {
-    if (my_strlen(buf_di) < flgs->precision) {
+    if (my_strlen(*buf_di) < flgs->precision) {
         for (int i = 0; i < flgs->precision - my_strlen(*buf_di); i++)
             add_buffer(buf_di, "0", 1);
     }
-    if ((my_strlen(buf_di) < flgs->width) &&
+    if ((my_strlen(*buf_di) < flgs->width) &&
         (flgs->has_zero == 1) && (flgs->has_minus == 0)) {
         for (int i = (nbr < 0); i < flgs->width - my_strlen(*buf_di); i++)
             add_buffer(buf_di, "0", 1);
