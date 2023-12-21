@@ -18,7 +18,7 @@ all: build clean
 
 build: $(SRC)
 	@$(CC) $(CFLAGS) $(SRC) -L../lib -lmy -c
-	@$(CC) $(CFLAGS) *.o -o $(NAME)
+	@$(CC) $(CFLAGS) *.o -L../lib -lmy -o $(NAME)
 
 fclean: clean
 	@rm -f $(NAME)
