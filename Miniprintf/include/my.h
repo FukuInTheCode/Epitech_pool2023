@@ -18,8 +18,9 @@
     #include <criterion/criterion.h>
     #include <criterion/redirect.h>
 
-void my_putchar(char);
+int my_putchar(char);
 int my_put_nbr(int);
 int my_strncmp(char const *, char const *, int);
 int mini_printf(char const *, ...);
+int my_putstr(char const *);
 #endif
