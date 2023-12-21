@@ -10,5 +10,5 @@
 int mod_format_f(char **buffer, va_list args, my_flags_t *flgs)
 {
     add_buffer(buffer, "%", 1);
-    return (buffer);
+    return (0);
 }
