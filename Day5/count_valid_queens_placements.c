@@ -29,19 +29,20 @@ static char is_valid(long *queens, int qount, int n, long qurrent)
     return 1;
 }
 
-static int my_recursif(long *queens, int qount, int n)
+static int my_recursif(long *queens, int qount, int n, long *big_o)
 {
     int ret = 0;
     long i = queens[qount - (qount != 0)] * (qount != 0);
 
     for (; i < n * n; i++) {
+        (*big_o)++;
         if (is_valid(queens, qount, n, i) == 0)
             continue;
         queens[qount] = i;
         if (qount + 1 == n)
             ret++;
         else
-            ret += my_recursif(queens, qount + 1, n);
+            ret += my_recursif(queens, qount + 1, n, big_o);
     }
     return ret;
 }
@@ -49,6 +50,9 @@ static int my_recursif(long *queens, int qount, int n)
 int count_valid_queens_placements(int n)
 {
     long queens[n];
+    long big_o = 0;
 
-    return my_recursif(queens, 0, n);
+    int ret = my_recursif(queens, 0, n, &big_o);
+    printf("%ld\n", big_o);
+    return ret;
 }
