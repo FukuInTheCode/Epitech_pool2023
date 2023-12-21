@@ -5,8 +5,6 @@
 ** Placeholder
 */
 
-// coucou
-
 #include "include/rush3.h"
 
 int main(void)

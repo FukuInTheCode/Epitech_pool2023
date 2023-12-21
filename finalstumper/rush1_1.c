@@ -12,11 +12,11 @@ static int verrify_1(int size[2], int x, int y, char c)
     int l = size[0];
     int h = size[1];
 
-    if (x == 0 || x == l - 1 && y == 0 || y == h - 1 && c == 'o')
+    if ((x == 0 || x == l - 1) && (y == 0 || y == h - 1) && c == 'o')
         return 0;
-    if (x == 0 || x == l - 1 && c == '|')
+    if ((x == 0 || x == l - 1) && c == '|')
         return 0;
-    if (y == 0 || y == h - 1 && c == '-')
+    if ((y == 0 || y == h - 1) && c == '-')
         return 0;
     if (x != 0 && x != l - 1 && y != 0 && y != h - 1 && c == ' ')
         return 0;
