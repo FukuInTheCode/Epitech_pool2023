@@ -9,9 +9,9 @@
 
 static int find_power(char c, char const *base)
 {
+    if (c == '-' || c == '+')
+        return -2;
     for (int i = 0; '\0' != base[i]; i++) {
-        if (base[i] == '-' || base[i] == '+')
-            return -2;
         if (base[i] == c)
             return i;
     }
