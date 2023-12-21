@@ -61,6 +61,7 @@ int c_format_f(char **, va_list, my_flags_t *);
 int di_format_f(char **, va_list, my_flags_t *);
 int e_format_f(char **, va_list, my_flags_t *);
 int a_format_f(char **, va_list, my_flags_t *);
+int amaj_format_f(char **, va_list, my_flags_t *);
 int emaj_format_f(char **, va_list, my_flags_t *);
 int s_format_f(char **, va_list, my_flags_t *);
 int u_format_f(char **, va_list, my_flags_t *);
@@ -82,7 +83,7 @@ static my_struct_t const types[] = {
 //    {"g", g_format_f},
 //    {"G", G_format_f},
     {"a", a_format_f},
-//    {"A", A_format_f},
+    {"A", amaj_format_f},
 //    {"p", p_format_f},
 //    {"%", mod_format_f},
     {NULL, NULL}
