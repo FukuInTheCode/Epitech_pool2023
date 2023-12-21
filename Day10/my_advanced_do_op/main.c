@@ -12,7 +12,7 @@ int my_usage(int a, int b)
     int useless = (a - a == 0 && b - b == 0);
 
     write(2, "error: only [ ", my_strlen("error: only [ "));
-    for (int i = 0; OPERATORS_FUNCS[i].op; i++) {
+    for (int i = 0; OPERATORS_FUNCS[i].op[0]; i++) {
         write(2, OPERATORS_FUNCS[i].op, my_strlen(OPERATORS_FUNCS[i].op));
         write(2, " ", 1);
     }
