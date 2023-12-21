@@ -31,7 +31,8 @@ int rush3(char *input)
         return 84;
     *buffer = 0;
     count(input, size);
-    for (int i = 0; corner_0[i].s; (!my_strncmp(corner_0[i++].s, input, 1) &&
+    for (int i = 0; corner_0[i].s;)
+        (!my_strncmp(corner_0[i++].s, input, 1) &&
         corner_0[i - 1].f(&buffer, input, size) <= INT_MAX));
     if (!my_strlen(buffer))
         add_buffer(&buffer, "none", 4);

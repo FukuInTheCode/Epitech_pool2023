@@ -73,8 +73,11 @@ int add_buffer(char **, char *, int);
 int rush1_1(char **, char *, int[2]);
 int rush1_2(char **, char *, int[2]);
 int rush1_3(char **, char *, int[2]);
+int rush1_4(char **, char *, int[2]);
+int rush1_5(char **, char *, int[2]);
 int rush1_345_line(char **, char *, int[2]);
 int rush1_345(char **, char *, int[2]);
+int rush1_45(char **, char *, int[2]);
 int rush3(char *);
 
 typedef int(*rush_func)();
@@ -94,7 +97,13 @@ static my_struct_t const corner_0[] = {
 
 static my_struct_t const corner_1[] = {
     {"A", rush1_3},
-//    {"C", rush1_45},
+    {"C", rush1_45},
+    {NULL, NULL}
+};
+
+static my_struct_t const corner_2[] = {
+    {"A", rush1_4},
+    {"C", rush1_5},
     {NULL, NULL}
 };
 
