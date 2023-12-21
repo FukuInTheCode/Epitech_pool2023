@@ -16,7 +16,6 @@ static void swap_index(char *argv[], int i)
     tmp = argv[i];
     argv[i] = argv[i - 1];
     argv[i - 1] = tmp;
-
 }
 
 int main(int argc, char *argv[])
@@ -31,4 +30,3 @@ int main(int argc, char *argv[])
     }
     return 0;
 }
-
