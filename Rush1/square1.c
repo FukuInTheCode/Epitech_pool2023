@@ -10,7 +10,6 @@
 void print_last(int x , int y, char *str)
 {
     if (y != 1) {
-        my_putchar('\n');
         my_putchar(str[2]);
         for (int i = 0; i < x - 2; i++) {
             my_putchar(str[0]);
@@ -34,6 +33,7 @@ void draw(int x, int y, char *str)
             my_putchar(' ');
         }
         my_putchar(str[1]);
+        my_putchar('\n');
     }
     print_last(x, y, str);
 }
