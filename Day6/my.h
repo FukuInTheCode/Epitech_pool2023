@@ -26,4 +26,5 @@ char *my_strncpy(char *, char const *, int);
 char *my_strstr(char *, char const *);
 int my_strcmp(char const *, char const *);
 int my_strncmp(char const *, char const *, int);
+char *my_strupcase(char *);
 #endif

@@ -19,6 +19,6 @@ Test(my_strcpy, copy_whole_str)
 {
     char dest[6] = {0};
 
-    my_strncpy(dest, "Hello", 6);
+    my_strncpy(dest, "Hello", 5);
     cr_assert_str_eq(dest, "Hello");
 }
