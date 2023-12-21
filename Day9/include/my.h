@@ -17,7 +17,6 @@
     #define MAX_INTEGER 2147483647
     #define MIN_INTEGER -2147483648
     #define GETNBR_CHECK (is_int_stred(str[i]) || is_sign_stred(str[i]))
-    #define ENVIE_DE_MOURIR
     #define INFO_T struct info_param
 
 void my_putchar(char);
@@ -62,13 +61,4 @@ struct info_param *my_params_to_array(int, char **);
 int my_show_param_array(INFO_T *const);
 int get_color(unsigned char, unsigned char, unsigned char);
 int swap_endian_color(int color);
-#endif
-
-#ifdef ENVIE_DE_MOURIR
-struct info_param {
-    int length;
-    char *str;
-    char *copy;
-    char **word_array;
-};
 #endif
