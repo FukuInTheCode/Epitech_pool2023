@@ -8,11 +8,9 @@
 #include "include/rush3.h"
 
 
-
-
-int rush1_1(char **buffer, char *input, int size[3])
+int rush1_2(char **buffer, char *input, int size[2])
 {
-    char *name = "[rush1-1] ";
+    char *name = "[rush1-2] ";
     char *size_str[] = {
         my_put_nbr(size[0]),
         my_put_nbr(size[1])
