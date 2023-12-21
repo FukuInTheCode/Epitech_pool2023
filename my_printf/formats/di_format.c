@@ -7,7 +7,7 @@
 
 #include "../include/my.h"
 
-void di_format_f2(char **buf_di, int nbr, my_flags_t *flgs)
+static int di_format_f2(char **buf_di, int nbr, my_flags_t *flgs)
 {
     int tmp = my_strlen(*buf_di);
 
@@ -26,18 +26,28 @@ void di_format_f2(char **buf_di, int nbr, my_flags_t *flgs)
         add_buffer(buf_di, "+", 1);
     if (flgs->has_space == 1 && flgs->has_plus == 0 && nbr >= 0)
         add_buffer(buf_di, " ", 1);
+    return 0;
+}
+
+static void init_buf(int nbr, my_flags_t *flgs, char **buf_di)
+{
+    if (nbr == 0 && flgs->precision == 0) {
+        *buf_di = malloc(1);
+        **buf_di = 0;
+    } else
+        *buf_di = my_put_nbr(nbr);
 }
 
 int di_format_f(char **buffer, va_list args, my_flags_t *flgs)
 {
     int nbr = va_arg(args, int);
     int tmp_len;
-    char *buf_di = my_put_nbr(nbr);
+    char *buf_di;
 
-    if (nbr == 0 && flgs->precision == 0)
-        return (0);
-    my_revstr(buf_di);
-    di_format_f2(&buf_di, nbr, flgs);
+    init_buf(nbr, flgs, &buf_di);
+    if (!buf_di)
+        return 84;
+    my_revstr(buf_di) && di_format_f2(&buf_di, nbr, flgs);
     my_revstr(buf_di);
     tmp_len = my_strlen(buf_di);
     if (tmp_len < flgs->width) {

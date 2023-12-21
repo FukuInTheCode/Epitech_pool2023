@@ -34,7 +34,7 @@ int a_format_f(char **buffer, va_list args, my_flags_t *flgs)
     add_buffer(&buf_a, "x0", 2) <= INT_MAX && my_revstr(buf_a);
     for (int i = 0; i++ < precision; mantissa -= (int)mantissa) {
         mantissa *= 16;
-        add_buffer(&buf_a, base + (int)mantissa, 1);
+        add_buffer(&buf_a, base + (int)(mantissa + .5), 1);
     }
     call_di_format(&buf_a, expo);
     add_buffer(buffer, buf_a, my_strlen(buf_a));
