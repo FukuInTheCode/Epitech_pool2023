@@ -67,18 +67,4 @@ int my_find_prime_sup(int);
 char *my_strstr(char *str, char const *);
 int my_sort_word_array(char **);
 int my_advanced_sort_word_array(char **, SORTING_FUNC);
-linked_list_t *my_params_to_list(int, char const **);
-int my_list_size(linked_list_t const *);
-void my_rev_list(linked_list_t **);
-int my_apply_on_nodes(linked_list_t *, int(*f)(void *));
-int my_apply_on_matching_nodes(linked_list_t *, int(*f)(),
-    void const *data_ref, int(*cmp)());
-linked_list_t *my_find_node(linked_list_t const *, void const *,
-    int(*cmp)());
-int my_delete_nodes(linked_list_t **, void const *, int(*cmp)());
-void my_concat_list(linked_list_t **begin1, linked_list_t *begin2);
-void my_sort_list(linked_list_t **, int(*cmp)());
-void my_add_in_sorted_list(linked_list_t **, void *, int(*cmp)());
-void my_merge(linked_list_t **, linked_list_t *, int(*cmp)());
-int cat(int, char *[]);
 #endif

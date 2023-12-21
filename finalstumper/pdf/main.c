@@ -1,5 +1,5 @@
 #include <unistd.h>
-//#include "rush3.h"
+#include "../include/rush3.h"
 
 #define BUFF_SIZE 32
 
@@ -14,5 +14,6 @@ int main(void)
     if (len < 0)
         return (84) ;
 //    rush3(buff) ;
+    write(1, buff, offset);
     return (0) ;
 }
