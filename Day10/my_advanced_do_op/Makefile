@@ -5,7 +5,7 @@
 ## Placeholder
 ##
 
-NAME   = do-op
+NAME   = my_advanced_do-op
 
 CC	   = gcc
 
