@@ -12,5 +12,6 @@ Test(my_str_islower, check_if_contain_just_lowercase)
     cr_assert(my_str_islower("abc") == 1);
     cr_assert(my_str_islower("abc3") == 0);
     cr_assert(my_str_islower("abC") == 0);
+    cr_assert(my_str_islower("") == 1);
 }
 

@@ -11,4 +11,5 @@ Test(my_showmem, ram_infos)
 {
     char str[] = "Hello je suis une merde totale";
     my_showmem(str, sizeof(str));
+    my_showmem(str, sizeof(str) - 1);
 }

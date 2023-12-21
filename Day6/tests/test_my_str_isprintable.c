@@ -12,4 +12,5 @@ Test(my_str_isprintable, check_if_isprintable)
     cr_assert(my_str_isprintable("abc") == 1);
     cr_assert(my_str_isprintable("a\nb") == 0);
     cr_assert(my_str_isprintable("DQSD qSQ") == 1);
+    cr_assert(my_str_isprintable("") == 1);
 }
