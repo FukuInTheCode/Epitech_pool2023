@@ -15,7 +15,8 @@ static int is_flags(char const *format, int *i, va_list args)
         *i += 2;
         return write(1, "%", 1);
     }
-    if (!my_strncmp(format + *i, "%d", 2) || !my_strncmp(format + *i, "%i", 2)) {
+    if (!my_strncmp(format + *i, "%d", 2) ||
+        !my_strncmp(format + *i, "%i", 2)) {
         *i += 2;
         return my_put_nbr((int)va_arg(args, int));
     }
