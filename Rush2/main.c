@@ -24,7 +24,12 @@ int main(int argc, char *argv[])
 
     if (argc < 3)
         return 84;
+    if (!argv[1][0])
+        return 84;
     for (int i = 2; i != argc ; i++) {
+        if (!('a' <= argv[i][0] && argv[i][0] <= 'z') &&
+            !('A' <= argv[i][0] && argv[i][0] <= 'Z'))
+            continue;
         write(1, argv[i], 1);
         write(1, ":", 1);
         count_tmp = rush_count(argv[1], *(argv[i]));
