@@ -15,7 +15,7 @@ int c_format_f(char **buffer, va_list args, my_flags_t *flgs)
     if (!this_buf)
         return -1;
     this_buf[0] = 0;
-    for (int i = 0; i++ < flgs->width; add_buffer(&this_buf, " ", 1));
+    for (int i = 0; i++ < flgs->width - 1; add_buffer(&this_buf, " ", 1));
     add_buffer(&this_buf, &argu, 1);
     if (flgs->has_minus)
         my_revstr(this_buf);
