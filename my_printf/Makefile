@@ -9,7 +9,7 @@ NAME   = libmy.a
 
 CC	   = gcc
 
-CFLAGS = -Wall -Wextra -Werror -I../../include/
+CFLAGS = -Wall -Wextra
 
 SRC	= my_revstr.c	\
 			my_put_float.c	\
@@ -38,12 +38,12 @@ SRC	= my_revstr.c	\
 			my_printf.c	\
 			my_put_unbr.c	\
 
-OBJ	= $(@SRC:.c=.o)
+OBJ	= $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar -rcs $(NAME) $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 
 clean:
 	@rm -f $(OBJ)
