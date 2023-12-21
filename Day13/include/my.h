@@ -12,6 +12,9 @@
     #include <unistd.h>
     #include <stdlib.h>
     #include "btree.h"
-btree_t *btree_create_node(void *);
 
+btree_t *btree_create_node(void *);
+void btree_apply_prefix(btree_t *, int(*)(void *));
+void btree_insert_data(btree_t **, void *, int(*)());
+void *btree_search_item(btree_t const *, void const *, int(*)());
 #endif

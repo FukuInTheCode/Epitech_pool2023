@@ -10,18 +10,14 @@
 void *btree_search_item(btree_t const *root,
     void const *data_ref, int(*cmpf)())
 {
-    void *tmp1;
-    void *tmp2;
+    int tmp = 0;
 
     if (!root)
         return NULL;
-    if (cmpf(root->item, data_ref) == 0)
-        return root->item;
-    tmp1 = btree_search_item((btree_t const *)(root->left), data_ref, cmpf);
-    if (tmp1)
-        return tmp1;
-    tmp2 = btree_search_item((btree_t const *)(root->right), data_ref, cmpf);
-    if (tmp2)
-        return tmp1;
-    return NULL;
+    tmp = cmpf(root->item, data_ref);
+    if (tmp == 0)
+        return (void *)root;
+    if (tmp < 0)
+        return btree_search_item((void *)(root->right), data_ref, cmpf);
+    return btree_search_item((void *)(root->left), data_ref, cmpf);
 }
