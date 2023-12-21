@@ -9,7 +9,7 @@
 
 void my_rev_list(linked_list_t **begin)
 {
-    linked_list_t *b2;
+    linked_list_t *b2 = *begin;
 
     for (linked_list_t *tmp = (*begin)->next; tmp; tmp = (*begin)->next) {
         (*begin)->next = tmp->next;
