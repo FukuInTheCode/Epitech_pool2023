@@ -25,4 +25,5 @@ int my_advanced_sort_word_array(char **tab, int(*cmp)(char const *, char const *
             my_cmp(tab, j - 1, j, cmp(tab[j - 1], tab[j]));
         }
     }
+    return 0;
 }
