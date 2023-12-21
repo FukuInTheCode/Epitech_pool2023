@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "my.h"
+#include "../my.h"
 
 Test(my_strncpy, copy_five_characters_in_empty_array)
 {

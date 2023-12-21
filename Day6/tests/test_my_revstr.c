@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "my.h"
+#include "../my.h"
 
 Test(my_revstr, return_value_is_reversed)
 {

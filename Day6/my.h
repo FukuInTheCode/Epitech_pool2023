@@ -23,5 +23,6 @@ int my_is_prime(int nb);
 char *my_revstr(char *);
 char *my_strcpy(char *, char const *);
 char *my_strncpy(char *, char const *, int);
-char *mt_strstr(char *, char const *);
+char *my_strstr(char *, char const *);
+int my_strcmp(char const *, char const *);
 #endif
