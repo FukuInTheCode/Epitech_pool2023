@@ -23,7 +23,7 @@ static int error_handling(char **buffer, char const *fmt, int *i)
     j += (fmt[j] == '.');
     for (; '0' <= fmt[j] && fmt[j] <= '9'; j++);
     for (int k = 0; types[k].c; k++)
-        if (!my_strncmp(types[k].c, fmt, my_strlen(types[k].c)))
+        if (!my_strncmp(types[k].c, fmt + j, my_strlen(types[k].c)))
             return 0;
     add_buffer(buffer, "%", 1);
     return 1;
