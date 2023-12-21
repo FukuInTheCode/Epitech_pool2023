@@ -16,6 +16,7 @@ static int call_e(my_flags_t *flgs, double nbr, char **buffer, ...)
 
     va_start(args, buffer);
     flgs->precision -= expo * (expo > 0) + 1;
+    flgs->precision = flgs->precision * (flgs->precision >= 0);
     save_p = flgs->precision;
     for (int i = 0; i++ <= expo; mantissa = (mantissa -
         (int)my_floor(mantissa)) * 10.);
