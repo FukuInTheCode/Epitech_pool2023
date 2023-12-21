@@ -7,7 +7,7 @@
 
 NAME   = my_advanced_do_op
 
-CC	   = cc
+CC	   = gcc
 
 CFLAGS = -Werror -Wall -Wextra
 
@@ -17,11 +17,10 @@ SRC	= main.c \
 all: build clean
 
 build: $(SRC)
-	@cd ../lib/my && make && cd ../../my_advanced_do_op
-	@$(CC) $(CFLAGS) $(SRC) -L../lib/ -lmy
+	@$(CC) $(CFLAGS) $(SRC) -L../lib -lmy -c
+	@$(CC) $(CFLAGS) *.o -L../lib -lmy -o $(NAME)
 
-fclean:
-	@cd ../lib/my && make clean && cd ../../my_advanced_do_op
+fclean: clean
 	@rm -f $(NAME)
 
 clean:
