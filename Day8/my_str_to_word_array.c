@@ -55,9 +55,8 @@ char **my_str_to_word_array(char const *str)
             continue;
         count += is_alphanum(str[i]) == 0;
     }
-    my_put_nbr(count);
     init_tmp(count, &ret, &tmp, str);
-    if (count != 1) {
+    if (count > 1) {
         ret[sub_i] = malloc(my_strlen(tmp) + 1);
         my_strcpy(ret[sub_i++], tmp + count_first_non_alpha(str));
         sub_i = fill_arr(str, tmp, ret, sub_i);

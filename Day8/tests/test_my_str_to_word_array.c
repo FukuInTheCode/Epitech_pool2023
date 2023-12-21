@@ -30,18 +30,26 @@ Test(my_str_to_word_array, with_nchar_that_are_next)
     for (int i = 0; output[i]; i++)
         cr_assert_str_eq(output[i], expected[i]);
     for (int i = 0; output[i]; i++) {
-        my_putstr(output[i]);
         free(output[i]);
     }
     free(output);
 }
-
 
 Test(my_str_to_word_array, with2_nchar_that_are_next)
 {
     char *input = "       ";
     char **output = my_str_to_word_array(input);
     char *expected[1] = {0};
+    cr_assert(output[0] == expected[0]);
+    free(output);
+}
+
+Test(my_str_to_word_array, with3_nchar_that_are_next)
+{
+    char *input = "";
+    char **output = my_str_to_word_array(input);
+    char *expected[1] = {0};
+    my_show_word_array(output);
     cr_assert(output[0] == expected[0]);
     free(output);
 }
