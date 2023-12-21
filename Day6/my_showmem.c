@@ -38,7 +38,7 @@ int my_showmem(char const *str, int size)
             my_putnbr_base(str[i + j], "0123456789abcdef");
             write(1, " ", (j % 2));
         }
-        for (int k = (j + 1) * 2 + (j + (j % 2 == 0)) * 2 / 5; k < 40; k++)
+        for (int k = (j + 1) * 2 + (j + (j % 2 == 0)) * 2 / 5; k < 41; k++)
             write(1, " ", 1);
         for (int j = 0; j < 16 && i + j < size; j++)
             show_char(str[i + j]);
