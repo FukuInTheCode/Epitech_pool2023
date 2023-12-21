@@ -10,11 +10,12 @@
 char *my_revstr(char *str)
 {
     int len = 0;
+    char tmp;
 
     for (int i = 0; str[i] != '\0'; i++)
         len++;
     for (int i = 0; i < len / 2; i++) {
-        char tmp = str[i];
+        tmp = str[i];
         str[i] = str[len - i - 1];
         str[len - i - 1] = tmp;
     }
