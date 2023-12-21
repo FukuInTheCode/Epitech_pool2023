@@ -26,5 +26,6 @@ int draw(int x, int y, char *str)
         my_putchar(str[0]);
     }
     my_putchar(str[2]);
+    my_putchar('\n');
     return (1);
 }
