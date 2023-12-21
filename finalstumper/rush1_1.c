@@ -32,7 +32,7 @@ static int is_correct_1(char *str, int size[2])
     error += verrify(size[2], 0, 0, str[0]);
     for (int y = 0; y != h; y++)
         for (int x = 1; x != l; x++)
-            error += verrify(size, x, y, str[x + len * y]);
+            error += verrify(size, x, y, str[x + l * y]);
     if (error != 0)
         return 84;
     return 0;
@@ -46,7 +46,7 @@ int rush1_1(char **buffer, char *input, int size[2])
         my_put_nbr(size[1])
     };
 
-    if (is_corect_1(input, size) == 84)
+    if (is_correct_1(input, size) == 84)
         return 0;
     add_buffer(buffer, name, my_strlen(name));
     add_buffer(buffer, size_str[0], my_strlen(size_str[0]));
