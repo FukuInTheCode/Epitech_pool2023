@@ -64,4 +64,5 @@ int swap_endian_color(int color);
 int count_valid_queens_placements(int);
 int my_find_prime_sup(int);
 char *my_strstr(char *str, char const *);
+int my_sort_word_array(char **);
 #endif

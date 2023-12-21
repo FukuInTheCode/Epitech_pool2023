@@ -7,7 +7,7 @@
 
 CC	 = cc
 
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -Werror
 
 all: clean build
 

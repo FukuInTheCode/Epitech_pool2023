@@ -9,6 +9,7 @@
 
 static op_func find_op(char *op_str)
 {
+    my_putchar(op_str[0]);
     if (op_str[0] == '+')
         return my_add;
     if (op_str[0] == '/')
