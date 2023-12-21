@@ -47,7 +47,7 @@ int space_flag_f(my_flags_t *);
 int zero_flag_f(my_flags_t *);
 char *my_strcat(char *, char const *);
 char *my_strcpy(char *, char const *);
-size_t my_strlen(char const *);
+int my_strlen(char const *);
 char *my_strncat(char *, char const *, int);
 char *my_revstr(char *);
 int my_getnbr(char const *);
@@ -78,34 +78,18 @@ int s_format_f(char **, va_list, my_flags_t *);
 
 int u_format_f(char **, va_list, my_flags_t *);
 
-int p_format_f(char **, va_list, my_flags_t *);
-
-int o_format_f(char **, va_list, my_flags_t *);
-
-int x_format_f(char **, va_list, my_flags_t *);
-int xmaj_format_f(char **, va_list, my_flags_t *);
-
 int n_format_f(char **, va_list, my_flags_t *);
-int hhn_format_f(char **, va_list, my_flags_t *);
-int hn_format_f(char **, va_list, my_flags_t *);
-int ln_format_f(char **, va_list, my_flags_t *);
-int lln_format_f(char **, va_list, my_flags_t *);
-int zn_format_f(char **, va_list, my_flags_t *);
 
 static my_struct_t const types[] = {
     {"c", c_format_f},
     {"n", n_format_f},
-    {"hhn", hhn_format_f},
-    {"hn", hn_format_f},
-    {"ln", ln_format_f},
-    {"lln", lln_format_f},
-    {"zn", zn_format_f},
     {"d", di_format_f},
     {"hhd", di_format_f},
     {"hd", di_format_f},
     {"ld", ldi_format_f},
     {"lld", lldi_format_f},
     {"zd", zdi_format_f},
+//    {"qd", qdi_format_f},
     {"i", di_format_f},
     {"hhi", di_format_f},
     {"hi", di_format_f},
@@ -116,20 +100,16 @@ static my_struct_t const types[] = {
 //    {"f", f_format_f},
 //    {"F", F_format_f},
     {"u", u_format_f},
-    {"o", o_format_f},
-    {"x", x_format_f},
-    {"X", xmaj_format_f},
+//    {"o", o_format_f},
+//    {"x", x_format_f},
+//    {"X", X_format_f},
     {"e", e_format_f},
     {"E", emaj_format_f},
 //    {"g", g_format_f},
 //    {"G", G_format_f},
     {"a", a_format_f},
-    {"hha", a_format_f},
-    {"ha", a_format_f},
     {"A", amaj_format_f},
-    {"hhA", amaj_format_f},
-    {"hA", amaj_format_f},
-    {"p", p_format_f},
+//    {"p", p_format_f},
 //    {"%", mod_format_f},
     {NULL, NULL}
 };
