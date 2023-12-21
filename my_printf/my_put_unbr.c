@@ -13,7 +13,7 @@ char *my_put_unbr(unsigned int nb)
     char tmp;
 
     buffer[0] = 0;
-    for (nb != 0; nb = nb / 10) {
+    for (; nb != 0; nb = nb / 10) {
         tmp = (nb % 10) + 48;
         add_buffer(&buffer, &tmp, 1);
     }
