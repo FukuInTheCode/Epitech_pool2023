@@ -37,7 +37,7 @@ char **my_str_to_word_array(char const *str)
     for (int i = 0; str[i]; i++) {
         if (!tmp[i])
             continue;
-        i += dup_str(ret, sub_i++, tmp, i);
+        i += dup_str(ret, sub_i++, tmp, i) - 1;
     }
     ret[count] = NULL;
     free(tmp);
