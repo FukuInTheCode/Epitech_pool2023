@@ -10,20 +10,20 @@
 void di_format_f2(char **buf_di, int nbr, my_flags_t *flgs)
 {
     if (my_strlen(buf_di) < flgs->precision) {
-        for (int i = 0; i < flgs->precision - my_strlen(buf_di); i++)
-            add_buffer(&buf_di, "0", 1);
+        for (int i = 0; i < flgs->precision - my_strlen(*buf_di); i++)
+            add_buffer(buf_di, "0", 1);
     }
     if ((my_strlen(buf_di) < flgs->width) &&
         (flgs->has_zero == 1) && (flgs->has_minus == 0)) {
-        for (int i = (nbr < 0); i < flgs->width - my_strlen(buf_di); i++)
-            add_buffer(&buf_di, "0", 1);
+        for (int i = (nbr < 0); i < flgs->width - my_strlen(*buf_di); i++)
+            add_buffer(buf_di, "0", 1);
     }
     if (nbr < 0)
-        add_buffer(&buf_di, "-", 1);
+        add_buffer(buf_di, "-", 1);
     if (flgs->has_plus && nbr >= 0)
-        add_buffer(&buf_di, "+", 1);
+        add_buffer(buf_di, "+", 1);
     if (flgs->has_space == 1 && flgs->has_plus == 0 && nbr >= 0)
-        add_buffer(&buf_di, " ", 1);
+        add_buffer(buf_di, " ", 1);
 }
 
 int di_format_f(char **buffer, va_list args, my_flags_t *flgs)
@@ -38,7 +38,7 @@ int di_format_f(char **buffer, va_list args, my_flags_t *flgs)
     my_revstr(buf_di);
     if ((my_strlen(buf_di) < flgs->width) && (flgs->has_zero == 0)) {
         if (flgs->has_minus == 0)
-            my_revstr(buff_di);
+            my_revstr(buf_di);
         for (int i = (nbr < 0); i < flgs->width - my_strlen(buf_di); i++)
             add_buffer(&buf_di, " ", 1);
         if (flgs->has_minus == 0)
