@@ -17,6 +17,7 @@
     #define MAX_INTEGER 2147483647
     #define MIN_INTEGER -2147483648
     #define GETNBR_CHECK (is_int_stred(str[i]) || is_sign_stred(str[i]))
+    #define SORTING_FUNC  int(*cmp)(char const *, char const *)
 
 void my_putchar(char);
 int my_isneg(int);
@@ -65,4 +66,5 @@ int count_valid_queens_placements(int);
 int my_find_prime_sup(int);
 char *my_strstr(char *str, char const *);
 int my_sort_word_array(char **);
+int my_advanced_sort_word_array(char **, SORTING_FUNC);
 #endif
