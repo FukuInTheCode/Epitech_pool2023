@@ -72,7 +72,9 @@ int my_advanced_sort_word_array(char **, SORTING_FUNC);
 int add_buffer(char **, char *, int);
 int rush1_1(char **, char *, int[2]);
 int rush1_2(char **, char *, int[2]);
+int rush1_3(char **, char *, int[2]);
 int rush1_345_line(char **, char *, int[2]);
+int rush1_345(char **, char *, int[2]);
 int rush3(char *);
 
 typedef int(*rush_func)();
@@ -85,8 +87,14 @@ typedef struct {
 static my_struct_t const corner_0[] = {
     {"o", rush1_1},
     {"/", rush1_2},
-//    {"A", rush1_345},
+    {"A", rush1_345},
     {"B", rush1_345_line},
+    {NULL, NULL}
+};
+
+static my_struct_t const corner_1[] = {
+    {"A", rush1_3},
+//    {"C", rush1_45},
     {NULL, NULL}
 };
 

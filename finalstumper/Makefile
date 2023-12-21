@@ -12,6 +12,8 @@ SRC	=	main.c		\
 		my_put_nbr.c	\
 		rush1_2.c \
 		rush1_345_line.c \
+		rush1_345.c \
+		rush1_3.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -31,6 +33,6 @@ clean:
 	rm -f *.o
 
 fclean: clean
-	rm -f libmy.a
+	rm -f $(NAME)
 
 re : fclean all
