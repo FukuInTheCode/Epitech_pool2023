@@ -15,6 +15,10 @@ Test(my_str_to_word_array, convert_str_arr_word)
 
     for (int i = 0; output[i]; i++)
         cr_assert_str_eq(output[i], expected[i]);
+    for (int i = 0; output[i]; i++) {
+        my_put_nbr(i);
+        free(output[i]);
+    }
     free(output);
 }
 

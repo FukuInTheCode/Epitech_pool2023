@@ -14,25 +14,34 @@ static int is_alphanum(char c)
     return ('a' <= c && c <= 'z') + ('A' <= c && c <= 'Z');
 }
 
+static void init_tmp(size_t count, char ***ret, char **tmp, char const *str)
+{
+    *ret = malloc(sizeof(char *) * (count + 1));
+    *tmp = malloc(my_strlen(str) + 1);
+    my_strcpy(*tmp, str);
+    for (int i = 0; (*tmp)[i]; i++)
+        (*tmp)[i] -= (*tmp)[i] * (is_alphanum((*tmp)[i]) == 0);
+}
+
 char **my_str_to_word_array(char const *str)
 {
-    char **ret;
+    char **ret = NULL;
     size_t count = 1;
-    char *tmp;
+    char *tmp = NULL;
     size_t sub_i = 0;
 
     for (int i = 0; str[i]; i++)
         count += is_alphanum(str[i]) == 0;
-    ret = malloc(sizeof(char *) * (count + 1));
-    tmp = malloc(my_strlen(str) + 1);
-    my_strcpy(tmp, str);
-    ret[sub_i++] = tmp;
+    init_tmp(count, &ret, &tmp, str);
+    ret[sub_i] = malloc(my_strlen(tmp) + 1);
+    my_strcpy(ret[sub_i++], tmp);
     for (int i = 0; i < my_strlen(str); i++) {
-        if (is_alphanum(tmp[i]))
+        if (tmp[i] != '\0')
             continue;
-        tmp[i] = '\0';
-        ret[sub_i++] = tmp + i + 1;
+        ret[sub_i] = malloc(my_strlen(tmp + i + 1));
+        my_strcpy(ret[sub_i++], tmp + i + 1);
     }
     ret[sub_i] = NULL;
+    free(tmp);
     return ret;
 }
