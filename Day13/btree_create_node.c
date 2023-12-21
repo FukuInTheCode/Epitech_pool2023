@@ -12,5 +12,7 @@ btree_t *btree_create_node(void *item)
     btree_t *ret = malloc(sizeof(btree_t));
 
     ret->item = item;
+    ret->left = NULL;
+    ret->right = NULL;
     return ret;
 }
