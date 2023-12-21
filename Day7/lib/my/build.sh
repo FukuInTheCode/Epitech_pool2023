@@ -1,5 +1,5 @@
 #!/bin/bash
 
 gcc -c *.c
-ar -rcs mylib.a *.o
+ar -rcs libmy.a *.o
 rm *.o
