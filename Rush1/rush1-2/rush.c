@@ -9,11 +9,12 @@
 
 int rush(int x, int y)
 {
-    char *draw_var = "**/\\/\\";
+    char *draw_var = "**/\\\\/";
 
     if (x <= 0 || y <= 0) {
         write(2, "Invalid size\n", 13);
         return 0;
     }
-    return draw(x, y, draw_var);
+    draw(x, y, draw_var);
+    return 1;
 }
