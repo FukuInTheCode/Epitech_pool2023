@@ -19,6 +19,22 @@ static int call_di_format(char **buffer, ...)
     return 0;
 }
 
+static int formating_buffer(char **buffer, int nbr, my_flags_t *flgs)
+{
+    int len;
+
+    my_revstr(*buffer);
+    add_buffer(buffer, "x0", 2);
+    (nbr < 0) && add_buffer(buffer, "-", 1);
+    nbr >= 0 && flgs->has_plus && add_buffer(buffer, "+", 1);
+    my_revstr(*buffer);
+    len = my_strlen(*buffer);
+    !flgs->has_minus && my_revstr(*buffer);
+    for (int i = 0; i++ < flgs->width - len; add_buffer(buffer, " ", 1));
+    !flgs->has_minus && my_revstr(*buffer);
+    return 0;
+}
+
 int a_format_f(char **buffer, va_list args, my_flags_t *flgs)
 {
     double nbr = va_arg(args, double);
@@ -30,13 +46,13 @@ int a_format_f(char **buffer, va_list args, my_flags_t *flgs)
     char *base = "0123456789abcdef";
 
     mantissa -= 1.;
-    add_buffer(&buf_a, ".", 1) <= INT_MAX && my_revstr(buf_a);
-    add_buffer(&buf_a, "x0", 2) <= INT_MAX && my_revstr(buf_a);
+    add_buffer(&buf_a, ".", 1);
     for (int i = 0; i++ < precision; mantissa -= (int)mantissa) {
         mantissa *= 16;
-        add_buffer(&buf_a, base + (int)(mantissa + .5), 1);
+        add_buffer(&buf_a, base + (int)(mantissa), 1);
     }
     call_di_format(&buf_a, expo);
+    formating_buffer(&buf_a, nbr, flgs);
     add_buffer(buffer, buf_a, my_strlen(buf_a));
     free(buf_a);
     return 0;
