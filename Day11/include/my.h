@@ -12,7 +12,7 @@
     #include <criterion/redirect.h>
     #include <stdio.h>
     #include <stdint.h>
-    #include "my_opp.h"
+    #include "mylist.h"
 
     #define MAX_INTEGER 2147483647
     #define MIN_INTEGER -2147483648
@@ -67,4 +67,5 @@ int my_find_prime_sup(int);
 char *my_strstr(char *str, char const *);
 int my_sort_word_array(char **);
 int my_advanced_sort_word_array(char **, SORTING_FUNC);
+linked_list_t *my_params_to_list(int, char const **);
 #endif

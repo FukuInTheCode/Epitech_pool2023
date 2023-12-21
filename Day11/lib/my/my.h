@@ -12,7 +12,7 @@
     #include <criterion/redirect.h>
     #include <stdio.h>
     #include <stdint.h>
-    #include "my_opp.h"
+    #include "mylist.h"
 
     #define MAX_INTEGER 2147483647
     #define MIN_INTEGER -2147483648
