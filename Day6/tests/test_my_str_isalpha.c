@@ -11,5 +11,6 @@ Test(my_str_isalpha, check_if_contain_just_alphachar)
 {
     cr_assert(my_str_isalpha("abc") == 1);
     cr_assert(my_str_isalpha("abc3") == 0);
+    cr_assert(my_str_isalpha("") == 1);
 }
 
