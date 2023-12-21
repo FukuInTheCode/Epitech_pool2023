@@ -18,7 +18,7 @@ static int verrify_3(int size[2], int x, int y, char c)
         return 0;
     if (x == 0 && (y == 0 || y == h - 1) && c == 'A')
         return 0;
-    if ((x == l - 1 && (y == h - 1 || y == 0) && c == 'C')
+    if (x == l - 1 && (y == h - 1 || y == 0) && c == 'C')
         return 0;
     if (x != 0 && x != l - 1 && y != 0 && y != h - 1 && c == ' ')
         return 0;
@@ -33,7 +33,7 @@ static int is_correct_3(char *str, int size[2])
 
     for (int y = 0; y != h; y++)
         for (int x = 0; x != l + 1; x++)
-            error += verrify_2(size, x, y, str[x + (l + 1) * y]);
+            error += verrify_3(size, x, y, str[x + (l + 1) * y]);
     if (error != 0)
         return 84;
     return 0;
