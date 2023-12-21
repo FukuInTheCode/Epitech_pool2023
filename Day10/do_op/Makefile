@@ -5,6 +5,8 @@
 ## Placeholder
 ##
 
+NAME   = do_op
+
 CC	   = cc
 
 CFLAGS = -Werror -Wall -Wextra
@@ -12,15 +14,17 @@ CFLAGS = -Werror -Wall -Wextra
 SRC	= main.c \
 	    operators.c
 
-DIR = $(pwd)
-
-all: clean build clean
-
+all: build clean
 
 build: $(SRC)
 	@cd ../lib/my && make && cd ../../do_op
-	@$(CC) $(CFLAGS) $(SRC) -L../lib -lmy
+	@$(CC) $(CFLAGS) $(SRC) -L../lib -lmy -o $(NAME)
+
+fclean: clean
+	@cd ../lib/my && make clean && cd ../../do_op
+	@rm -f $(NAME)
 
 clean:
-	@cd ../lib/my && make clean && cd ../../do_op
-	@rm -f *.out
+	@rm -f *.o
+
+re: fclean all
