@@ -22,6 +22,7 @@ static int find_closest_perfect_sqrt(int nb)
 int my_is_prime(int nb)
 {
     int end_border;
+
     if (nb <= 1)
         return 0;
     if (nb == 2 || nb == 3)
