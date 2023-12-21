@@ -7,7 +7,7 @@
 
 #include "include/rush3.h"
 
-int* count(char *str, int size[3])
+int *count(char *str, int size[3])
 {
     int high = 0;
     int len = 0;
