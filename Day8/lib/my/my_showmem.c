@@ -30,6 +30,7 @@ int my_showmem(char const *str, int size)
 {
     int j;
     int i2 = 0;
+    int k;
 
     for (int i = 0; i < size; i += 16) {
         show_line_adress(i2);
@@ -38,7 +39,8 @@ int my_showmem(char const *str, int size)
             my_putnbr_base(str[i + j], "0123456789abcdef");
             write(1, " ", (j % 2));
         }
-        for (int k = (j + 1) * 2 + (j + (j % 2 == 0)) * 2 / 5; k < 40 + (j != 16); k++)
+        k = (j + 1) * 2 + (j + (j % 2 == 0)) * 2 / 5;
+        for (; k < 40 + (j != 16); k++)
             write(1, " ", 1);
         for (int j = 0; j < 16 && i + j < size; j++)
             show_char(str[i + j]);

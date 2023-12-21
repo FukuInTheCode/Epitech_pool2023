@@ -10,6 +10,8 @@
     #include <unistd.h>
     #include <criterion/criterion.h>
     #include <criterion/redirect.h>
+    #include <stdio.h>
+    #include <stdint.h>
 
     #define MAX_INTEGER 2147483647
     #define MIN_INTEGER -2147483648
@@ -46,4 +48,6 @@ int my_showstr(char const *);
 int my_showmem(char const *, int);
 char *my_strcat(char *, char const *);
 char *my_strncat(char *, char const *, int);
+char *my_strdup(char const *);
+int is_end_combn(int, int);
 #endif
