@@ -11,6 +11,8 @@ char *my_strstr(char *str, char const *to_find)
 {
     int len = 0;
 
+    if (*to_find == '\0')
+        return str;
     for (; to_find[len] != '\0'; len++)
         continue;
     for (int i = 0; str[i] != '\0'; i++) {
