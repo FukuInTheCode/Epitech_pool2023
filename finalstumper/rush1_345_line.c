@@ -7,7 +7,7 @@
 
 #include "include/rush3.h"
 
-static verif_line(int size, int x, int y, char c)
+static int verif_line(int size[2], int x, int y, char c)
 {
     int l = size[0];
     int h = size[0];
@@ -15,19 +15,19 @@ static verif_line(int size, int x, int y, char c)
     if (x == l && c == '\n')
         return 0;
     if (l == 1 || h == 1)
-        if ((X == 0 || x == l - 1 || y == 0 || y == h - 1) && c == 'B')
+        if ((x == 0 || x == l - 1 || y == 0 || y == h - 1) && c == 'B')
             return 0;
     return 1;
 }
 
-static is_a_line(char *input, int size[2])
+static int is_a_line(char *str, int size[2])
 {
     int l = 0;
     int h = 0;
     int error = 0;
 
     for (int y = 0; y != h; y++)
-        for (int x = 0; c != l; x++)
+        for (int x = 0; x != l; x++)
             error = verif_line(size, x, y, str[x + (l + 1) * y]);
     if (error != 0)
         return 84;
