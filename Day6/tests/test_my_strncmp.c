@@ -9,5 +9,7 @@
 
 Test(my_strncmp, compare_n_char)
 {
-    cr_assert(my_strncmp("A1C", "A2C", 2));
+    char str[4] = "A1C";
+    char str1[4] = "A2C";
+    cr_assert(my_strncmp(str, str1, 2) < 0);
 }
