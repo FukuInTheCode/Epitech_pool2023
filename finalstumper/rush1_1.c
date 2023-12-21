@@ -29,10 +29,10 @@ static int is_correct_1(char *str, int size[2])
     int h = size[1];
     int error = 0;
 
-    error += verrify(size[2], 0, 0, str[0]);
+    error += verrify_1(size, 0, 0, str[0]);
     for (int y = 0; y != h; y++)
-        for (int x = 1; x != l; x++)
-            error += verrify(size, x, y, str[x + l * y]);
+        for (int x = 0; x != l; x++)
+            error += verrify_1(size, x, y, str[x + l * y]);
     if (error != 0)
         return 84;
     return 0;
