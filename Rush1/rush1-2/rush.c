@@ -15,6 +15,6 @@ int rush(int x, int y)
         write(2, "Invalid size\n", 13);
         return 0;
     }
-    draw(x, y, draw_var);
+    draw(x, y, draw_var, 0);
     return 1;
 }

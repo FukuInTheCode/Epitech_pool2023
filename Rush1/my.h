@@ -19,5 +19,5 @@ int my_putstr(char const *str);
 void my_swap(int *a, int *b);
 int my_compute_square_root(int nb);
 int my_is_prime(int nb);
-void draw(int x, int y, char *str);
+void draw(int x, int y, char *str, char do_print_corner);
 #endif
