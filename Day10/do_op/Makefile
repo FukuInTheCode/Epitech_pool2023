@@ -12,7 +12,8 @@ CC	   = gcc
 CFLAGS = -Werror -Wall -Wextra
 
 SRC	= main.c \
-	    operators.c
+	    operators.c \
+	    useless.c
 
 all: build clean
 
