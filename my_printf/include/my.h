@@ -87,6 +87,8 @@ int p_format_f(char **, va_list, my_flags_t *);
 
 int o_format_f(char **, va_list, my_flags_t *);
 
+int mod_format_f(char **, va_list, my_flags_t *);
+
 int x_format_f(char **, va_list, my_flags_t *);
 int xmaj_format_f(char **, va_list, my_flags_t *);
 
@@ -140,7 +142,9 @@ static my_struct_t const types[] = {
     {"lA", amaj_format_f},
     {"llA", amaj_format_f},
     {"p", p_format_f},
-//    {"%", mod_format_f},
+    {"hh%", mod_format_f},
+    {"h%", mod_format_f},
+    {"%", mod_format_f},
     {NULL, NULL}
 };
 
