@@ -51,6 +51,7 @@ int my_strlen(char const *);
 char *my_strncat(char *, char const *, int);
 char *my_revstr(char *);
 int my_getnbr(char const *);
+int my_compute_power_it(int, int);
 int my_strncmp(char const *, char const *, int);
 int add_buffer(char **, char *, int);
 char *my_put_nbr(int);

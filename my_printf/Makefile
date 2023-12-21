@@ -13,6 +13,7 @@ CFLAGS = -Wall -Wextra
 
 SRC	= my_revstr.c	\
 			my_put_float.c	\
+			my_compute_power_it.c	\
 			my_put_nbr.c	\
 			my_strncat.c	\
 			my_getnbr.c	\

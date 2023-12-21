@@ -22,7 +22,7 @@ int a_format_f(char **buffer, va_list args, my_flags_t *flgs)
     double nbr = va_arg(args, double);
     double mantissa;
     int expo = my_fexpn(nbr, 2, &mantissa);
-    printf("%lf\n", mantissa);
+    printf("%lf, %d\n", mantissa, expo);
     char *buf_e = my_put_float(mantissa, (6 - flgs->precision) *
         (flgs->precision == -1) + flgs->precision);
 
