@@ -23,8 +23,16 @@ int u_format_f(char **buffer, va_list args, my_flags_t *flgs)
     if ((tmp < flgs->width) &&
         (flgs->has_zero == 1) && (flgs->has_minus == 0)) {
         for (int i = (nbr < 0 ); i < flgs->width - tmp; i++)
-            add_buffer(&buf_u, " ", 1);
+            add_buffer(&buf_u, "0", 1);
     }
     my_revstr(buf_u);
+    if (tmp < flgs->width) {
+        if (flgs->has_minus == 0)
+            my_revstr(buf_u);
+        for (int i = 0; i < flgs->width - tmp; i++)
+            add_buffer(&buf_u, " ", 1);
+        if (flgs->has_minus == 0)
+            my_revstr(buf_u);
+    }
     add_buffer(buffer, buf_u, my_strlen(buf_u));
 }

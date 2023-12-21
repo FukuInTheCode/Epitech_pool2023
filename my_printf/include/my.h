@@ -52,33 +52,23 @@ char *my_strncat(char *, char const *, int);
 char *my_revstr(char *);
 int my_getnbr(char const *);
 int my_strncmp(char const *, char const *, int);
+int c_format_f(char **, va_list, my_flags_t *);
 int add_buffer(char **, char *, int);
 char *my_put_nbr(int);
-char *my_put_unbr(unsigned int);
-char *my_put_float(double, int);
-int my_fexpn(double, int, double *);
-int c_format_f(char **, va_list, my_flags_t *);
-int di_format_f(char **, va_list, my_flags_t *);
-int e_format_f(char **, va_list, my_flags_t *);
-int a_format_f(char **, va_list, my_flags_t *);
-int emaj_format_f(char **, va_list, my_flags_t *);
-int s_format_f(char **, va_list, my_flags_t *);
-int u_format_f(char **, va_list, my_flags_t *);
 
 static my_struct_t const types[] = {
     {"c", c_format_f},
-    {"d", di_format_f},
-//    {"lld", di_format_f},
-    {"i", di_format_f},
-    {"s", s_format_f},
+//    {"d", i_format_f},
+//    {"i", i_format_f},
+//    {"s", s_format_f},
 //    {"f", f_format_f},
 //    {"F", F_format_f},
-    {"u", u_format_f},
+//    {"u", u_format_f},
 //    {"o", o_format_f},
 //    {"x", x_format_f},
 //    {"X", X_format_f},
-    {"e", e_format_f},
-    {"E", emaj_format_f},
+//    {"e", e_format_f},
+//    {"E", E_format_f},
 //    {"g", g_format_f},
 //    {"G", G_format_f},
 //    {"a", a_format_f},
