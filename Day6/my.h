@@ -30,4 +30,5 @@ char *my_strupcase(char *);
 char *my_strlowcase(char *);
 char *my_strcapitalize(char *);
 int my_str_isalpha(char const *);
+int my_str_isnum(char const *);
 #endif
