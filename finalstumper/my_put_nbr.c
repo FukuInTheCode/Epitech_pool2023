@@ -5,7 +5,7 @@
 ** new my_put_nbr for myprintf
 */
 
-#include "include/my.h"
+#include "include/rush3.h"
 
 char *my_put_nbr(int nb)
 {

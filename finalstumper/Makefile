@@ -25,10 +25,10 @@ lib :
 	make -C./lib/my re
 
 $(NAME) : lib $(OBJ)
-	gcc -o $(NAME) $(OBJ) -L lib/my -l my
+	gcc -o $(NAME) $(OBJ) -L lib/ -l my
 
 clean:
-	rm *.o
+	rm -f *.o
 
 fclean: clean all
 	rm -f libmy.a

@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "include/my.h"
+#include "include/rush3.h"
 
 int add_buffer(char **buffer, char *to_add, int n)
 {

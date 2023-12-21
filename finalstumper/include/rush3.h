@@ -69,7 +69,7 @@ int my_find_prime_sup(int);
 char *my_strstr(char *str, char const *);
 int my_sort_word_array(char **);
 int my_advanced_sort_word_array(char **, SORTING_FUNC);
-void add_buffer(char **, char *, int);
+int add_buffer(char **, char *, int);
 int rush1_1(char **, char *, int[2]);
 int rush3(char *);
 
