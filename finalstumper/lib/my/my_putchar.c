@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "../../include/my.h"
+#include "../../include/rush3.h"
 
 void my_putchar(char c)
 {

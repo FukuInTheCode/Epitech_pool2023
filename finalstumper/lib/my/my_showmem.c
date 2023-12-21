@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "../../include/my.h"
+#include "../../include/rush3.h"
 
 static int show_char(char c)
 {

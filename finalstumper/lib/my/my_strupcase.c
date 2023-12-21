@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "../../include/my.h"
+#include "../../include/rush3.h"
 
 char *my_strupcase(char *str)
 {

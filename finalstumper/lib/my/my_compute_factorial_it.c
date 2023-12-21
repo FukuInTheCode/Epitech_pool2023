@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "../../include/my.h"
+#include "../../include/rush3.h"
 
 int my_compute_factorial_it(int nb)
 {

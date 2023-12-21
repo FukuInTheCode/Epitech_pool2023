@@ -6,7 +6,7 @@
 */
 
 
-#include "../../include/my.h"
+#include "../../include/rush3.h"
 
 static long my_recursif(int n, int i)
 {

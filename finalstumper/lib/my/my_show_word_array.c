@@ -6,7 +6,7 @@
 */
 
 
-#include "../../include/my.h"
+#include "../../include/rush3.h"
 
 int my_show_word_array(char const **tab)
 {
