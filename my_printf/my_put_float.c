@@ -17,6 +17,7 @@ char *my_put_float(double n, int precision)
     if (!buf)
         return NULL;
     *buf = 0;
+    n == 0 && add_buffer(&buf, "0", 1);
     for (; before; before /= 10)
         (tmp = '0' + before % 10) && add_buffer(&buf, &tmp, 1);
     my_revstr(buf);
