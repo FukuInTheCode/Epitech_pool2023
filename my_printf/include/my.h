@@ -53,13 +53,14 @@ char *my_revstr(char *);
 int my_getnbr(char const *);
 int my_strncmp(char const *, char const *, int);
 int c_format_f(char **, va_list, my_flags_t *);
+int di_format_f(char **, va_list, my_flags_t *);
 int add_buffer(char **, char *, int);
 char *my_put_nbr(int);
 
 static my_struct_t const types[] = {
     {"c", c_format_f},
-//    {"d", i_format_f},
-//    {"i", i_format_f},
+    {"d", di_format_f},
+    {"i", di_format_f},
 //    {"s", s_format_f},
 //    {"f", f_format_f},
 //    {"F", F_format_f},
