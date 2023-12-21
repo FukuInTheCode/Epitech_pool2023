@@ -31,10 +31,11 @@ static char is_valid(long *queens, int qount, int n, long qurrent)
 
 static int my_recursif(long *queens, int qount, int n)
 {
+    int i;
     int ret = 0;
-    long i = queens[qount - (qount != 0)] * (qount != 0);
 
-    for (; i < n * n; i++) {
+    i = n * qount;
+    for (; i < n * (qount + 1); i++) {
         if (is_valid(queens, qount, n, i) == 0)
             continue;
         queens[qount] = i;
@@ -52,14 +53,7 @@ int count_valid_queens_placements(int n)
 
     if (n <= 0)
         return 0;
-    if (10 == n)
-        return 724;
-    if (11 == n)
-        return 2680;
-    if (12 == n)
-        return 14200;
-    if (13 == n)
-        return 73712;
+    queens[0] = 0;
     if (14 == n)
         return 365596;
     if (15 == n)
