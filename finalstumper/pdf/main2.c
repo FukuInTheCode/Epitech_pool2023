@@ -1,9 +1,9 @@
 int main(void)
 {
-    printf("o--o\n");
-    printf("|  |\n");
-    printf("|  |f");
-    printf("|  |\n");
-    printf("o--o\n");
+    printf("a\*\*\\\n");
+    printf("*  *\n");
+    printf("*  *\n");
+    printf("*  *\n");
+    printf("\\\*\*/\n");
     return 0;
 }
