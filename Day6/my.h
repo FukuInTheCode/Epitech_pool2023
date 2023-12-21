@@ -11,6 +11,7 @@
     #include <criterion/criterion.h>
     #include <criterion/redirect.h>
     #include <string.h>
+    #include <stddef.h>
 
     #define MAX_INTEGER 2147483647
     #define MIN_INTEGER -2147483648
