@@ -29,6 +29,7 @@ void di_format_f2(char **buf_di, int nbr, my_flags_t *flgs)
 int di_format_f(char **buffer, va_list args, my_flags_t *flgs)
 {
     int nbr = va_arg(args, int);
+    int tmp_len;
     char *buf_di = my_put_nbr(nbr);
 
     if (nbr == 0 && flgs->precision == 0)
@@ -36,10 +37,11 @@ int di_format_f(char **buffer, va_list args, my_flags_t *flgs)
     my_revstr(buf_di);
     di_format_f2(&buf_di, nbr, flgs);
     my_revstr(buf_di);
+    tmp_len = my_strlen(buf_di);
     if ((my_strlen(buf_di) < flgs->width) && (flgs->has_zero == 0)) {
         if (flgs->has_minus == 0)
             my_revstr(buf_di);
-        for (int i = (nbr < 0); i < flgs->width - my_strlen(buf_di); i++)
+        for (int i = 0; i < flgs->width - tmp_len; i++)
             add_buffer(&buf_di, " ", 1);
         if (flgs->has_minus == 0)
             my_revstr(buf_di);
