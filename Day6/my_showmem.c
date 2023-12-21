@@ -19,6 +19,7 @@ static int show_char(char c)
 static void show_line_adress(int n)
 {
     char adress[8] = {0};
+
     for (int i = 7; i >= 0; n /= 10)
         adress[i--] = '0' + n % 10;
     write(1, adress, 8);
