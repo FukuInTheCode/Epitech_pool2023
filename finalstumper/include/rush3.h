@@ -21,7 +21,7 @@
 
 void my_putchar(char);
 int my_isneg(int);
-int my_put_nbr(int);
+char *my_put_nbr(int);
 void my_swap(int *, int *);
 int my_putstr(char const *);
 int my_strlen(char const *);
@@ -67,6 +67,7 @@ int my_find_prime_sup(int);
 char *my_strstr(char *str, char const *);
 int my_sort_word_array(char **);
 int my_advanced_sort_word_array(char **, SORTING_FUNC);
+void add_buffer(char **, char *, int);
 
 typedef int(*rush_func)();
 
@@ -79,7 +80,7 @@ static my_struct_t const corner_0[] = {
     {"o", rush1_1},
     {"/", rush1_2},
     {"A", rush1_345},
-    {"B", rush1_345_line}
+    {"B", rush1_345_line},
     {NULL, NULL}
 };
 
