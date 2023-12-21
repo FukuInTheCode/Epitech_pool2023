@@ -15,11 +15,12 @@ CFLAGS = -Wall -Wextra
 
 all: $(NAME)
 
-$(NAME): OBJ
-	@$(CC) $(CFLAGS) *.o -o $(NAME)
+$(NAME): Build
+	@$(CC) $(CFLAGS) *.o -o $(NAME) -L../lib -lmy
 
-OBJ:
-	@$(CC) $(CFLAGS) -c $(SRC)
+Build:
+	@make -C../lib/my
+	@$(CC) $(CFLAGS) -c $(SRC) -L../lib -lmy
 
 clean:
 	@rm -f *.o
