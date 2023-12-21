@@ -42,7 +42,7 @@ int my_str_islower(char const *);
 int my_str_isupper(char const *);
 int my_str_isprintable(char const *);
 int my_showstr(char const *);
-int my_showmem(char const *);
+int my_showmem(char const *, int);
 char *my_strcat(char *, char const *);
 char *my_strncat(char *, char const *, int);
 #endif
