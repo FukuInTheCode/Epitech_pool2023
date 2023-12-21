@@ -16,7 +16,6 @@ size_t btree_level_count(btree_t const *root)
         return 0;
     left_count = btree_level_count((void *)(root->left));
     right_count = btree_level_count((void *)(root->right));
-
     return 1 + left_count * (left_count >= right_count) +
         right_count * (left_count < right_count);
 }
