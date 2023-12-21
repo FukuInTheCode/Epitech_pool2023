@@ -29,7 +29,6 @@ int my_usage(int a, int b)
     return 84;
 }
 
-
 static op_func find_op(char *op_str)
 {
     int i = 0;
