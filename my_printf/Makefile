@@ -17,6 +17,7 @@ SRC	= my_revstr.c	\
 			my_put_lfloat.c	\
 			my_put_nbr.c	\
 			my_strncat.c	\
+			my_floor.c	\
 			my_getnbr.c	\
 			formats/p_format.c	\
 			formats/g_format.c	\

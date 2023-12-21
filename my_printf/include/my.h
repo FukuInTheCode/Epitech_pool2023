@@ -51,6 +51,7 @@ size_t my_strlen(char const *);
 char *my_strncat(char *, char const *, int);
 char *my_revstr(char *);
 int my_getnbr(char const *);
+double my_floor(double);
 int my_strncmp(char const *, char const *, int);
 int add_buffer(char **, char *, int);
 char *my_putptr_base(size_t n, char *base);
@@ -86,6 +87,8 @@ int f_format_f(char **, va_list, my_flags_t *);
 int p_format_f(char **, va_list, my_flags_t *);
 
 int o_format_f(char **, va_list, my_flags_t *);
+
+int g_format_f(char **, va_list, my_flags_t *);
 
 int mod_format_f(char **, va_list, my_flags_t *);
 
@@ -179,7 +182,7 @@ static my_struct_t const types[] = {
 //    {"llE", llemaj_format_f},
 //    {"lE", lemaj_format_f},
 //    {"zE", zemaj_format_f},
-//    {"g", g_format_f},
+    {"g", g_format_f},
 //    {"hhg", hhg_format_f},
 //    {"hg", hg_format_f},
 //    {"llg", llg_format_f},
