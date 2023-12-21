@@ -7,11 +7,11 @@
 
 #include "my.h"
 
-int my_find_prime_sub(int nb)
+int my_find_prime_sup(int nb)
 {
     if (nb <= 0)
         return 2;
-    for (int i = nb; i <= MAX_INTEGER) {
+    for (int i = nb; i <= MAX_INTEGER; i++) {
         if (my_is_prime(i) == 1)
             return i;
     }
