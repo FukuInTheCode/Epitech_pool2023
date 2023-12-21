@@ -14,8 +14,13 @@ static int verrify_2(int size[2], int x, int y, char c)
 
     if (x == l && c == '\n')
         return 0;
-    if ((x == 0 || x == l - 1 || y == 0 || y == h - 1) && c == '*')
+    if ((x == 0 || x == l - 1 || y == 0 || y == h - 1) && c == '*'){
+        if (x == 0 && (y == 0 || y == h - 1))
+            return 1;
+        if (x == l - 1 && (y == 0 || y == h - 1)
+            return 1;
         return 0;
+    }
     if ((x == 0 && y == 0) || (x == l - 1 && y == h - 1) && c == '/')
         return 0;
     if ((x == 0 && y == h - 1) || (x == l - 1 && y == 0) && c == '\\')
