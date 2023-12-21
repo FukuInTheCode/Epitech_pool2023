@@ -76,6 +76,7 @@ int rush1_3(char **, char *, int[2]);
 int rush1_4(char **, char *, int[2]);
 int rush1_5(char **, char *, int[2]);
 int rush1_345_line(char **, char *, int[2]);
+int rush1_2_line(char **, char *, int[2]);
 int rush1_345(char **, char *, int[2]);
 int rush1_45(char **, char *, int[2]);
 int rush3(char *);
@@ -90,7 +91,7 @@ typedef struct {
 static my_struct_t const corner_0[] = {
     {"o", rush1_1},
     {"/", rush1_2},
-    {"*", rush1_2},
+    {"*", rush1_2_line},
     {"A", rush1_345},
     {"B", rush1_345_line},
     {NULL, NULL}
