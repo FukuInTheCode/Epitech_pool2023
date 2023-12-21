@@ -71,4 +71,6 @@ linked_list_t *my_params_to_list(int, char const **);
 int my_list_size(linked_list_t const *);
 void my_rev_list(linked_list_t **);
 int my_apply_on_nodes(linked_list_t *, int(*f)(void *));
+int my_apply_on_matching_nodes(linked_list_t *, int(*f)(),
+    void const *data_ref, int(*cmp)());
 #endif
