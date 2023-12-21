@@ -69,4 +69,5 @@ int my_sort_word_array(char **);
 int my_advanced_sort_word_array(char **, SORTING_FUNC);
 linked_list_t *my_params_to_list(int, char const **);
 int my_list_size(linked_list_t const *);
+void my_rev_list(linked_list_t **);
 #endif
