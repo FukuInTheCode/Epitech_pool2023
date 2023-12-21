@@ -18,6 +18,11 @@ int main(void)
         BUFF_SIZE - my_strlen(buffer)));
     if (len < 0)
         return 84;
+    if (my_strncmp(buffer, "Invalid size\n",
+        my_strlen("Invalid size\n"))) {
+        write(1, "none\n", 5);
+        return 0;
+    }
     rush3(buffer);
     return 0;
 }
