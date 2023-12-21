@@ -16,6 +16,7 @@ build: *.c
 	@ar -rcs libmy.a *.o
 	@rm *.o
 	@mv libmy.a ../
+	@cp *.h ../../include
 
 clean:
 	@rm -f ../*.a
