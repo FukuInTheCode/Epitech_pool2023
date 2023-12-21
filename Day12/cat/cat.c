@@ -11,10 +11,7 @@
 
 static int read_stdin(void)
 {
-    int len = 0;
-
-    for (char buffer[32001] = {0}; (len = read(0, buffer, 32000)) > 0;
-        write(1, buffer, len));
+    for (char buffer[32001]; ; write(1, buffer, read(0, buffer, 32000)));
     return 0;
 }
 
