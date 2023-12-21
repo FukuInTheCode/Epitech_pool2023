@@ -7,15 +7,14 @@
 
 #include "../include/my.h"
 
-static int f_format_f2(char **buf_di, int nbr, my_flags_t *flgs)
+static int f_format_f2(char **buf_f, double nbr, my_flags_t *flgs)
 {
     int tmp = my_strlen(*buf_f);
 
-    if tmp < flgs->precision) {
+    if (tmp < flgs->precision)
         for (int i = 0; i < flgs->precision - tmp; i++)
             add_buffer(buf_f, "0", 1);
-    }
-    if (my_strlen(*buf_f) < flgs->width)
+    if (my_strlen(*buf_f) < flgs->width
         && (flgs->has_zero == 1) && (flgs->has_minus == 0)) {
         for (int i = (nbr < 0 || flgs->has_plus); i < flgs->width - tmp; i++)
             add_buffer(buf_f, "0", 1);
@@ -29,15 +28,14 @@ static int f_format_f2(char **buf_di, int nbr, my_flags_t *flgs)
     return (0);
 }
 
-static void init_buf(int nbr, my_flags_t *flgs, char **buf_di)
+static void init_buf(double nbr, my_flags_t *flgs, char **buf_f)
 {
     int lim;
 
-    if (flgs->precision == -1) {
+    if (flgs->precision == -1)
         lim = 6;
-    } else {
+    else
         lim = flgs->precision;
-    }
     if (nbr == 0 && flgs->precision == 0) {
         *buf_f = malloc(1);
         **buf_f = 0;
