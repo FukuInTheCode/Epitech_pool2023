@@ -53,7 +53,7 @@ char *my_revstr(char *);
 int my_getnbr(char const *);
 int my_strncmp(char const *, char const *, int);
 int add_buffer(char **, char *, int);
-char *my_putptr_base(size_t, char *);
+char *my_putptr_base(size_t n, char *base);
 char *my_put_nbr(int);
 char *my_put_unbr(unsigned int);
 char *my_put_lnbr(long);
@@ -99,6 +99,8 @@ int ln_format_f(char **, va_list, my_flags_t *);
 int lln_format_f(char **, va_list, my_flags_t *);
 int zn_format_f(char **, va_list, my_flags_t *);
 
+int nothing_format_f(char **, va_list, my_flags_t *);
+
 static my_struct_t const types[] = {
     {"c", c_format_f},
     {"n", n_format_f},
@@ -119,7 +121,11 @@ static my_struct_t const types[] = {
     {"li", ldi_format_f},
     {"lli", lldi_format_f},
     {"zi", zdi_format_f},
+    {"hhs", s_format_f},
+    {"hs", s_format_f},
     {"s", s_format_f},
+    {"ls", nothing_format_f},
+    {"lls", nothing_format_f},
     {"f", f_format_f},
     {"F", f_format_f},
     {"u", u_format_f},
@@ -135,6 +141,7 @@ static my_struct_t const types[] = {
     {"ha", a_format_f},
     {"la", a_format_f},
 //    {"La", lmaja_format_f},
+//    {"LA", lmaja_format_f},
     {"lla", a_format_f},
     {"A", amaj_format_f},
     {"hhA", amaj_format_f},
@@ -145,6 +152,9 @@ static my_struct_t const types[] = {
     {"hh%", mod_format_f},
     {"h%", mod_format_f},
     {"%", mod_format_f},
+    {"l%", mod_format_f},
+    {"ll%", mod_format_f},
+    {"z%", mod_format_f},
     {NULL, NULL}
 };
 

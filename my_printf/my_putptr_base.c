@@ -12,6 +12,7 @@ char *my_putptr_base(size_t n, char *base)
     int len = my_strlen(base);
     char *buf = malloc(1);
 
+    *buf = 0;
     if (len == 0 || len == 1 || !buf)
         return NULL;
     if (n == 0)

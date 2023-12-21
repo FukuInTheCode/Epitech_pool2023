@@ -23,7 +23,7 @@ static int formating_buffer(char **buffer, my_flags_t *flgs)
 
 static int init_buffer(char **buffer, unsigned nbr, my_flags_t *flgs)
 {
-    char *tmp = NULL;
+    char *tmp = "";
 
     (flgs->precision != 0 || nbr != 0) &&
         (tmp = my_putptr_base(nbr, "01234567"));
