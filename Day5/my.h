@@ -17,4 +17,5 @@ int my_put_nbr(int nb);
 int my_strlen(char const *str);
 int my_putstr(char const *str);
 void my_swap(int *a, int *b);
+int my_compute_square_root(int nb);
 #endif

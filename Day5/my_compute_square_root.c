@@ -14,7 +14,7 @@ int my_compute_square_root(int nb)
         return 1;
     for (int i = 0; i <= nb / 2; i++) {
         if (i * i == nb)
-            return nb;
+            return i;
     }
     return 0;
 }
