@@ -7,7 +7,7 @@
 
 #include "include/rush3.h"
 
-int *count(char *str, int size[3])
+int *count(char *str, int size[2])
 {
     int high = 0;
     int len = 0;
@@ -19,22 +19,14 @@ int *count(char *str, int size[3])
         len++;
     size[0] = len;
     size[1] = high;
-    size[2] = NULL;
     return size;
 }
 
 int rush3(char *input)
 {
-    int size[3] = {0};
     char *buffer = malloc(1);
 
     if (!buffer)
         return 84;
     *buffer = 0;
-    count(input, size);
-    for (int i = 0; corner_0[i].s; (!my_strncmp(corner_0[i++].s, input,
-        my_strlen(corner_0[i - 1].s)) && corner_0[i - 1].f(&buffer, input, size) <= INT_MAX) ||
-        add_buffer(&buffer, "none\n", 5));
-    write(1, buffer, my_strlen(buffer));
-    return 0;
 }
