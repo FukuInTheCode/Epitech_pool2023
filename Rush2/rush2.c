@@ -7,13 +7,9 @@
 
 int rush(char *str , char a)
 {
-    int i = 0;
     int j = 0;
 
-    for (i; str[i] != '\0' ; i++) {
-        if (str[i] == a) {
-            j++;
-        }
-    }
-    return(j);
+    for (int i = 0; str[i] != '\0' ; i++)
+        j += (str[i] == a || str[i] == (a + 'A' - 'a')
+    return j;
 }
