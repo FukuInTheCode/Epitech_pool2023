@@ -19,7 +19,7 @@ static int call_di_format(char **buffer, ...)
     return 0;
 }
 
-static int formating_buffer(char **buffer, int nbr, my_flags_t *flgs)
+static int formating_buffer(char **buffer, double nbr, my_flags_t *flgs)
 {
     int len;
 

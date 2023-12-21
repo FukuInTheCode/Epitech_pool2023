@@ -23,6 +23,8 @@ SRC	= my_revstr.c	\
 			formats/u_format.c	\
 			formats/s_format.c	\
 			formats/di_format.c	\
+			formats/ldi_format.c	\
+			formats/lldi_format.c	\
 			formats/c_format.c	\
 			buffer_utils.c	\
 			flags/zero_flags.c	\
@@ -38,6 +40,8 @@ SRC	= my_revstr.c	\
 			my_fexpn.c	\
 			my_printf.c	\
 			my_put_unbr.c	\
+			my_put_lnbr.c	\
+			my_put_llnbr.c	\
 
 OBJ	= $(SRC:.c=.o)
 

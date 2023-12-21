@@ -55,22 +55,41 @@ int my_strncmp(char const *, char const *, int);
 int add_buffer(char **, char *, int);
 char *my_put_nbr(int);
 char *my_put_unbr(unsigned int);
+char *my_put_lnbr(long);
+char *my_put_llnbr(long long);
 char *my_put_float(double, int);
 int my_fexpn(double, int, double *);
+
 int c_format_f(char **, va_list, my_flags_t *);
+
 int di_format_f(char **, va_list, my_flags_t *);
-int e_format_f(char **, va_list, my_flags_t *);
-int a_format_f(char **, va_list, my_flags_t *);
+int ldi_format_f(char **, va_list, my_flags_t *);
+int lldi_format_f(char **, va_list, my_flags_t *);
+
 int amaj_format_f(char **, va_list, my_flags_t *);
+int a_format_f(char **, va_list, my_flags_t *);
+
+int e_format_f(char **, va_list, my_flags_t *);
 int emaj_format_f(char **, va_list, my_flags_t *);
+
 int s_format_f(char **, va_list, my_flags_t *);
+
 int u_format_f(char **, va_list, my_flags_t *);
 
 static my_struct_t const types[] = {
     {"c", c_format_f},
     {"d", di_format_f},
-//    {"lld", di_format_f},
+    {"hhd", di_format_f},
+    {"hd", di_format_f},
+    {"ld", ldi_format_f},
+    {"lld", lldi_format_f},
+    {"zd", u_format_f},
+//    {"qd", qdi_format_f},
     {"i", di_format_f},
+    {"hhi", di_format_f},
+    {"hi", di_format_f},
+    {"li", ldi_format_f},
+    {"lli", lldi_format_f},
     {"s", s_format_f},
 //    {"f", f_format_f},
 //    {"F", F_format_f},

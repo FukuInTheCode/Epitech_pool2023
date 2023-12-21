@@ -31,8 +31,9 @@ static int get_flags(char **buffer, char const *fmt, int *i, va_list args)
     for (; '0' <= fmt[j] && fmt[j] <= '9'; j++);
     for (int k = 0; types[k].c; k++)
         !my_strncmp(types[k].c, fmt + j, my_strlen(types[k].c)) &&
-        types[k].f(buffer, args, &this_flags);
-    *i += ++j;
+        types[k].f(buffer, args, &this_flags) <= INT_MAX &&
+        (j += my_strlen(types[k].c));
+    *i += j;
     return 0;
 }
 
