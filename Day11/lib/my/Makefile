@@ -13,7 +13,6 @@ build: *.c
 	@$(CC) -c *.c
 	@ar -rcs libmy.a *.o
 	@cp libmy.a ../
-	@cp *.h ../../include
 
 clean:
 	@rm -f *.o
