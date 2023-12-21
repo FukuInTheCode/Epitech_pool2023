@@ -28,7 +28,7 @@ static size_t fill_arr(char const *str, char *tmp, char **ret, size_t sub_i)
     for (int i = 0; i < my_strlen(str); i++) {
         if (tmp[i] != '\0' || (tmp[i] == 0 && tmp[i + 1] == 0))
             continue;
-        ret[sub_i] = malloc(my_strlen(tmp + i + 1));
+        ret[sub_i] = malloc(my_strlen(tmp + i + 1) + 1);
         my_strcpy(ret[sub_i++], tmp + i + 1);
     }
     return sub_i;
@@ -49,7 +49,7 @@ char **my_str_to_word_array(char const *str)
     init_tmp(count, &ret, &tmp, str);
     ret[sub_i] = malloc(my_strlen(tmp) + 1);
     my_strcpy(ret[sub_i++], tmp);
-    fill_arr(str, tmp, ret, sub_i);
+    sub_i = fill_arr(str, tmp, ret, sub_i);
     ret[sub_i] = NULL;
     free(tmp);
     return ret;

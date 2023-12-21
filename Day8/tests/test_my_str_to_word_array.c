@@ -21,16 +21,16 @@ Test(my_str_to_word_array, convert_str_arr_word)
     free(output);
 }
 
-
 Test(my_str_to_word_array, with_nchar_that_are_next)
 {
-    char *input = "Hello\nWorld\nYouGood\n\nPROUT";
+    char *input = "For\n\n\n\nThe\n\nAlliance\n";
     char **output = my_str_to_word_array(input);
-    char *expected[] = {"Hello", "World", "YouGood", "PROUT"};
+    char *expected[] = {"For", "The", "Alliance"};
 
     for (int i = 0; output[i]; i++)
         cr_assert_str_eq(output[i], expected[i]);
     for (int i = 0; output[i]; i++) {
+        my_putstr(output[i]);
         free(output[i]);
     }
     free(output);
