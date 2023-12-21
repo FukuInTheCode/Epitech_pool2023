@@ -24,9 +24,16 @@ int *count(char *str, int size[2])
 
 int rush3(char *input)
 {
+    int size[2] = {0};
     char *buffer = malloc(1);
 
     if (!buffer)
         return 84;
     *buffer = 0;
+    count(input, size);
+    for (int i = 0; corner_0[i].s; (!my_strncmp(corner_0[i++].s, input, 1) &&
+        corner_0[i - 1].f(&buffer, input, size) <= INT_MAX) ||
+        add_buffer(&buffer, "none\n", 5));
+    write(1, buffer, my_strlen(buffer));
+    return 0;
 }
