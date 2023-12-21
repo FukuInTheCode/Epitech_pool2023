@@ -7,7 +7,7 @@
 
 NAME   = libbtree.a
 
-SRC    = \
+SRC    = btree_create_node.c \
 
 CC	   = cc
 
