@@ -13,6 +13,18 @@ static bool is_flags(char c)
         c == ' ' || c == '+' || c == '-';
 }
 
+static int get_types(char **buffer, char const *fmt,
+    va_list args, my_flags_t *this_flags)
+{
+    for (int k = 0; types[k].c; k++) {
+        if (!my_strncmp(types[k].c, fmt, my_strlen(types[k].c))) {
+            types[k].f(buffer, args, this_flags);
+            return my_strlen(types[k].c);
+        }
+    }
+    return 0;
+}
+
 static int get_flags(char **buffer, char const *fmt, int *i, va_list args)
 {
     my_flags_t this_flags = { false, false, false, false,
@@ -29,11 +41,7 @@ static int get_flags(char **buffer, char const *fmt, int *i, va_list args)
     if (fmt[j - 1] == '.')
         this_flags.precision = my_getnbr(fmt + j);
     for (; '0' <= fmt[j] && fmt[j] <= '9'; j++);
-    for (int k = 0; types[k].c; k++)
-        !my_strncmp(types[k].c, fmt + j, my_strlen(types[k].c)) &&
-        types[k].f(buffer, args, &this_flags) <= INT_MAX &&
-        (j += my_strlen(types[k].c));
-    *i += j;
+    *i += j + get_types(buffer, fmt + j, args, &this_flags);
     return 0;
 }
 
@@ -44,10 +52,12 @@ int my_printf(char const *format, ...)
 
     buffer[0] = 0;
     va_start(args, format);
-    for (int i = 0; format[i]; i++)
-        (format[i] == '%' &&
-        !get_flags(&buffer, (void *)(format + i + 1), &i, args)) ||
-        add_buffer(&buffer, (void *)(format + i), 1);
+    for (int i = 0; format[i]; i++) {
+        if (format[i] == '%')
+            get_flags(&buffer, (void *)(format + i + 1), &i, args);
+        else
+            add_buffer(&buffer, (void *)(format + i), 1);
+    }
     va_end(args);
     return write(1, buffer, my_strlen(buffer));
 }
