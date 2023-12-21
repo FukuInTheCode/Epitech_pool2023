@@ -17,5 +17,5 @@ Test(my_strcapitalize, capitalize_everyword)
     cr_assert_str_eq(my_strcapitalize(str), "How Are You?");
     cr_assert_str_eq(my_strcapitalize(str1), "How Are-You?");
     cr_assert_str_eq(my_strcapitalize(str2), "How43are[You?");
-    cr_assert_str_eq(my_strcapitalize(str3), "Hello, Worl! How Are Y?");
+    cr_assert_str_eq(my_strcapitalize(str3), "Hello, Wokrl! How Are You?");
 }
