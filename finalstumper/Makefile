@@ -37,5 +37,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	make -C./lib/my fclean
 
 re : fclean all

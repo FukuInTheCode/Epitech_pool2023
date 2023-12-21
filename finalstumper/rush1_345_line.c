@@ -7,7 +7,6 @@
 
 #include "include/rush3.h"
 
-
 int rush1_345_line(char **buffer, char *input, int size[2])
 {
     char *names[] = {
