@@ -9,7 +9,7 @@ NAME   = libmy.a
 
 CC	   = gcc
 
-CFLAGS = -Wall -Wextra -Wno-unused-value
+CFLAGS = -Wall -Wextra -Wno-unused-value -Wno-sign-compare
 
 SRC	= my_revstr.c	\
 			my_put_float.c	\
@@ -22,6 +22,11 @@ SRC	= my_revstr.c	\
 			formats/emaj_format.c	\
 			formats/u_format.c	\
 			formats/n_format.c	\
+			formats/hhn_format.c	\
+			formats/hn_format.c	\
+			formats/ln_format.c	\
+			formats/zn_format.c	\
+			formats/lln_format.c	\
 			formats/s_format.c	\
 			formats/di_format.c	\
 			formats/ldi_format.c	\
