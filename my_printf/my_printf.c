@@ -26,7 +26,7 @@ static int get_flags(char **buffer, char const *fmt, int *i, va_list args)
         this_flags.width = my_getnbr(fmt + j);
     for (; '0' <= fmt[j] && fmt[j] <= '9'; j++);
     j += (fmt[j] == '.');
-    if ('0' <= fmt[j] && fmt[j] <= '9')
+    if (fmt[j - 1] == '.')
         this_flags.precision = my_getnbr(fmt + j);
     for (; '0' <= fmt[j] && fmt[j] <= '9'; j++);
     for (int k = 0; types[k].c;

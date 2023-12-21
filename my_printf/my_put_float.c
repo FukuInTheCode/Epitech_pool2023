@@ -16,6 +16,8 @@ char *my_put_float(double n, int precision)
     if (!buf)
         return NULL;
     buf[0] = 0;
+    if (n == 0.)
+        add_buffer(&buf, "0", 1);
     for (; ln > 1; ln = (ln - ((int)ln % 10)) / 10) {
         tmp = '0' + (int)ln % 10;
         add_buffer(&buf, &tmp, 1);
