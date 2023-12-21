@@ -41,11 +41,12 @@ static int read_files(int ac, char *argv[])
 
     for (int i = 1; i < ac; i++) {
         file = open(argv[i], O_RDONLY);
-        if (errno != 0)
+        if (errno > 0)
             return my_stderr(argv[i], errno);
         len = read(file, buffer, 32000);
         write(1, buffer, len);
     }
+    close(file);
     return 0;
 }
 
