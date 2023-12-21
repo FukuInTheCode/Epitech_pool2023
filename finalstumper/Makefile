@@ -14,6 +14,7 @@ SRC	=	main.c		\
 		rush1_5.c \
 		rush1_4.c \
 		rush1_345_line.c \
+		rush1_2_line.c \
 		rush1_345.c \
 		rush1_45.c \
 		rush1_3.c
