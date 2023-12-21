@@ -7,16 +7,18 @@
 
 CC	 = cc
 
-CFLAGS = -Wall -Wextra -Werror
-
-all: clean build
+all: clean build clean
 
 build: *.c
 	@$(CC) -c *.c
 	@ar -rcs libmy.a *.o
-	@rm *.o
 	@cp libmy.a ../
 	@cp *.h ../../include
 
 clean:
-	@rm -f ../*.a
+	@rm -f *.o
+
+fclean: clean
+	@rm -f libmy.a
+
+re: fclean all
