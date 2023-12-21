@@ -18,6 +18,8 @@ SRC	= my_revstr.c	\
 			my_getnbr.c	\
 			formats/p_format.c	\
 			formats/o_format.c	\
+			formats/x_format.c	\
+			formats/xmaj_format.c	\
 			formats/a_format.c	\
 			formats/amaj_format.c	\
 			formats/e_format.c	\
