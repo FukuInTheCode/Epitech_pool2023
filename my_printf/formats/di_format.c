@@ -40,7 +40,7 @@ int di_format_f(char **buffer, va_list args, my_flags_t *flgs)
     di_format_f2(&buf_di, nbr, flgs);
     my_revstr(buf_di);
     tmp_len = my_strlen(buf_di);
-    if (my_strlen(buf_di) < flgs->width) {
+    if (tmp_len < flgs->width) {
         if (flgs->has_minus == 0)
             my_revstr(buf_di);
         for (int i = 0; i < flgs->width - tmp_len; i++)
