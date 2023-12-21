@@ -39,4 +39,5 @@ int my_str_isprintable(char const *);
 int my_putnbr_base(int, char const *);
 int my_getnbr_base(char const *, char const *);
 int my_showstr(char const *);
+int my_showmem(char const *, int);
 #endif
