@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "my.h"
+#include "../my.h"
 
 int rush(int x, int y)
 {
