@@ -5,8 +5,9 @@
 ## launch the whole function
 ##
 
-SRC	=	main.c	\
-		rush3.c	\
+SRC	=	main.c		\
+		rush3.c		\
+		rush1_1.c	\
 
 OBJ = $(SRC:.c=.o)
 
