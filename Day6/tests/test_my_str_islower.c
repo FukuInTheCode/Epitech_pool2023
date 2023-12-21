@@ -9,8 +9,8 @@
 
 Test(my_str_islower, check_if_contain_just_lowercase)
 {
-    cr_assert(my_str_isalpha("abc") == 1);
-    cr_assert(my_str_isalpha("abc3") == 0);
-    cr_assert(my_str_isalpha("abC") == 0);
+    cr_assert(my_str_islower("abc") == 1);
+    cr_assert(my_str_islower("abc3") == 0);
+    cr_assert(my_str_islower("abC") == 0);
 }
 
