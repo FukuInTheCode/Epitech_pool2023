@@ -7,10 +7,10 @@ int main(void)
 //    printf("*  *\n");
 //    printf("\\***\n");
 
-    printf("ABBBA\n");
+    printf("ABBBC\n");
     printf("B   B\n");
     printf("B   B\n");
     printf("B   B\n");
-    printf("BBBBC\n");
+    printf("CBBBB\n");
     return 0;
 }
