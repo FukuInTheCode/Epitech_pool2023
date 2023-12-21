@@ -52,4 +52,5 @@ char *my_strdup(char const *);
 int is_end_combn(int, int);
 char *concat_params(int, char **);
 int my_show_word_array(char const **);
+char **my_str_to_word_array(char const *str);
 #endif
