@@ -32,5 +32,6 @@ int main(int argc, char *argv[])
         print_freq(100 * rush_frequence(argv[1], count_tmp));
         write(1, "%)\n", 3);
     }
+    find_lang(argv[1]);
     return 0;
 }
