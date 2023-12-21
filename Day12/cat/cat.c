@@ -9,24 +9,20 @@
 #include <errno.h>
 #include <fcntl.h>
 
-static void reset(char *buffer)
-{
-    for (int i = 0; buffer[i]; buffer[i++] = 0);
-}
-
 static int read_stdin(void)
 {
-    for (char buffer[32000] = {0}; read(0, buffer, 32000) > 0;
-        reset(buffer))
-        my_putstr(buffer);
+    int len = 0;
+
+    for (char buffer[32001] = {0}; (len = read(0, buffer, 32000)) > 0;
+        write(1, buffer, len));
     return 0;
 }
 
 static int my_stderr(char *f, int err)
 {
-    write(2, "cat : ", 6);
+    write(2, "cat: ", 5);
     write(2, f, my_strlen(f));
-    write(2, " : ", 3);
+    write(2, ": ", 2);
     if (err == ENOENT) {
         write(2, "No such file or directory",
             my_strlen("No such file or directory"));
@@ -40,15 +36,15 @@ static int my_stderr(char *f, int err)
 static int read_files(int ac, char *argv[])
 {
     int file;
-    char buffer[32000] = { 0 };
+    int len = 0;
+    char buffer[32001] = { 0 };
 
     for (int i = 1; i < ac; i++) {
         file = open(argv[i], O_RDONLY);
         if (errno != 0)
             return my_stderr(argv[i], errno);
-        read(file, buffer, 32000);
-        my_putstr(buffer);
-        reset(buffer);
+        len = read(file, buffer, 32000);
+        write(1, buffer, len);
     }
     return 0;
 }
