@@ -32,4 +32,6 @@ char *my_strcapitalize(char *);
 int my_str_isalpha(char const *);
 int my_str_isnum(char const *);
 int my_str_islower(char const *);
+int my_str_isupper(char const *);
+int my_str_isprintable(char const *);
 #endif
