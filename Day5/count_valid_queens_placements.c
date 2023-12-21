@@ -52,7 +52,6 @@ int count_valid_queens_placements(int n)
 
     if (n <= 0)
         return 0;
-
     if (10 == n)
         return 724;
     if (11 == n)
@@ -65,7 +64,5 @@ int count_valid_queens_placements(int n)
         return 365596;
     if (15 == n)
         return 2279184;
-
-    int ret = my_recursif(queens, 0, n);
-    return ret;
+    return my_recursif(queens, 0, n);
 }
