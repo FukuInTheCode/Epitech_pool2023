@@ -7,7 +7,7 @@
 
 #include "../include/my.h"
 
-int s_format_f(char ** buffer, va_list args, my_flgs_t *flgs)
+int s_format_f(char ** buffer, va_list args, my_flags_t *flgs)
 {
     char *tmp = va_arg(args, char *);
 
