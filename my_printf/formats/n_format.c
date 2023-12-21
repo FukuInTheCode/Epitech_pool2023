@@ -11,6 +11,6 @@ int n_format_f(char **buffer, va_list args, my_flags_t *flgs)
 {
     int *var = va_arg(args, int *);
 
-    
+    *var = my_strlen(*buffer);
     return 0;
 }

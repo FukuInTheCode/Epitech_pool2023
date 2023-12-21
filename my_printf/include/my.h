@@ -78,8 +78,11 @@ int s_format_f(char **, va_list, my_flags_t *);
 
 int u_format_f(char **, va_list, my_flags_t *);
 
+int n_format_f(char **, va_list, my_flags_t *);
+
 static my_struct_t const types[] = {
     {"c", c_format_f},
+    {"n", n_format_f},
     {"d", di_format_f},
     {"hhd", di_format_f},
     {"hd", di_format_f},

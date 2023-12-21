@@ -21,6 +21,7 @@ SRC	= my_revstr.c	\
 			formats/e_format.c	\
 			formats/emaj_format.c	\
 			formats/u_format.c	\
+			formats/n_format.c	\
 			formats/s_format.c	\
 			formats/di_format.c	\
 			formats/ldi_format.c	\
