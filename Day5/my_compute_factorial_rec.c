@@ -8,16 +8,19 @@
 
 #include "my.h"
 
-static int my_recursif(int n, int i)
+static long my_recursif(int n, int i)
 {
+    long ret;
+
     if (i == n)
         return i;
-    return i * my_recursif(n, i + 1);
+    ret = i * my_recursif(n, i + 1);
+    return ret * (MAX_INTEGER >= ret && ret >= MIN_INTEGER);
 }
 
 int my_compute_factorial_rec(int nb)
 {
     if (nb <= 0)
         return (nb == 0);
-    return my_recursif(nb, 1);
+    return (int)my_recursif(nb, 1);
 }

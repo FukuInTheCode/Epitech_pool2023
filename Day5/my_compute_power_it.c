@@ -11,7 +11,7 @@ int my_compute_power_it(int nb, int p)
 {
     long ret = 1;
 
-    if (p < 0)
+    if (p < 0 || (p == 0 && nb == 0))
         return 0;
     for (int i = 1; i <= p; i++) {
         ret *= nb;
