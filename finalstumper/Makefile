@@ -8,6 +8,8 @@
 SRC	=	main.c		\
 		rush3.c		\
 		rush1_1.c	\
+		buffer_utils.c	\
+		my_put_nbr.c	\
 
 OBJ = $(SRC:.c=.o)
 
