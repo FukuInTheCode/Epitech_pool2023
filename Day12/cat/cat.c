@@ -27,7 +27,7 @@ static int my_stderr(char *f, int err)
         write(2, "No such file or directory",
             my_strlen("No such file or directory"));
     }
-    if (err == EISDIR)
+    if (err == 21)
         write(2, "Is a directory", my_strlen("Is a directory"));
     write(2, "\n", 1);
     return 84;
@@ -44,6 +44,8 @@ static int read_files(int ac, char *argv[])
         if (errno > 0)
             return my_stderr(argv[i], errno);
         len = read(file, buffer, 32000);
+        if (errno > 0)
+            return my_stderr(argv[i], errno);
         write(1, buffer, len);
     }
     close(file);
