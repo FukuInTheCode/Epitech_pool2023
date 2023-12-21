@@ -7,11 +7,11 @@
 
 #include "my.h"
 
-void btree_apply_infix(btree_t *root, int(*apply)(void *))
+void btree_apply_infix(btree_t *root, int(*applyf)(void *))
 {
     if (!root)
         return;
-    btree_apply_infix(root->left, apply);
-    apply(root->data);
-    btree_apply_infix(root->left, apply);
+    btree_apply_infix(root->left, applyf);
+    applyf(root->item);
+    btree_apply_infix(root->left, applyf);
 }

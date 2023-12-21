@@ -12,5 +12,6 @@
     #include <unistd.h>
     #include <stdlib.h>
     #include "btree.h"
+btree_t *btree_create_node(void *);
 
 #endif
