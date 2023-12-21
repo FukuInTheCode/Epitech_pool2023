@@ -10,7 +10,7 @@
 static void my_print_spe_case(int x, int y, char *str)
 {
     for (int i = 0; i < y; i++) {
-        for(int j = 0; j < x; j++)
+        for (int j = 0; j < x; j++)
             my_putchar(str[0]);
         my_putchar('\n');
     }
