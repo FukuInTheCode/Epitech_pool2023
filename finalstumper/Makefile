@@ -11,6 +11,7 @@ SRC	=	main.c		\
 		buffer_utils.c	\
 		my_put_nbr.c	\
 		rush1_2.c \
+		rush1_345_line.c \
 
 OBJ = $(SRC:.c=.o)
 
