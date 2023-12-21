@@ -46,7 +46,7 @@ static int handle_mantissa(double mantissa, double nbr,
 
     mantissa -= 1.;
     (nbr != 0 || flgs->precision > 0) && add_buffer(buf_a, ".", 1);
-    for (int i = -1 * (nbr == 0.); i++ < precision &&
+    for (int i = -1 * (nbr == 0.); i++ < precision && (mantissa != 0.) &&
         (nbr != 0 || flgs->precision > 0); mantissa -= (int)mantissa)
         ((mantissa *= 16) || 1) && add_buffer(buf_a, base +
         (int)(mantissa), 1);
