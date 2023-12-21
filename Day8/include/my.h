@@ -50,4 +50,5 @@ char *my_strcat(char *, char const *);
 char *my_strncat(char *, char const *, int);
 char *my_strdup(char const *);
 int is_end_combn(int, int);
+char *concat_params(int, char **);
 #endif
