@@ -180,6 +180,20 @@ The precision is written " .number ", and has slightly different meanings for th
 We will see the length later :)
 
 <br>
+<br>
+
+### Add format specifier:
+You can also add you own format specifier ! <br> <br>
+**First :** Go in header. Add thing in list type who associate a string and a function in the same type of other.
+<br>
+
+**Second :** Create a new function in the directory "format" who call a pointer to a buffer, a va_list and a pointer to the structure "my_flags_t".
+<br>
+
+**Last :** In the function, you can do your algo and it's the end ! 
+
+<br>
+<br>
 
 <details>
     <summary>More ...</summary>
