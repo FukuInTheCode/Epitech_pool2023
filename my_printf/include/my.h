@@ -17,8 +17,8 @@
     #include <errno.h>
     #include <stdbool.h>
     #include <stdlib.h>
-    #include <criterion/criterion.h>
-    #include <criterion/redirect.h>
+//    #include <criterion/criterion.h>
+//    #include <criterion/redirect.h>
 
     #define GETNBR_CHECK (is_int_stred(str[i]) || is_sign_stred(str[i]))
 
