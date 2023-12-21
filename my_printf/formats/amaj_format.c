@@ -25,9 +25,9 @@ static int formating_buffer(char **buffer, double nbr, my_flags_t *flgs)
 
     my_revstr(*buffer);
     add_buffer(buffer, "X0", 2);
-    (nbr < 0 || nbr == -0.) && add_buffer(buffer, "-", 1);
-    nbr >= 0 && flgs->has_plus && add_buffer(buffer, "+", 1);
-    nbr >= 0 && !flgs->has_plus && flgs->has_space &&
+    (nbr < 0. || nbr == -0.) && add_buffer(buffer, "-", 1);
+    nbr >= 0. && flgs->has_plus && add_buffer(buffer, "+", 1);
+    nbr >= 0. && !flgs->has_plus && flgs->has_space &&
         add_buffer(buffer, " ", 1);
     my_revstr(*buffer);
     len = my_strlen(*buffer);

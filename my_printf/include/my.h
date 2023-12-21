@@ -53,6 +53,7 @@ char *my_revstr(char *);
 int my_getnbr(char const *);
 int my_strncmp(char const *, char const *, int);
 int add_buffer(char **, char *, int);
+char *my_putptr_base(size_t, char *);
 char *my_put_nbr(int);
 char *my_put_unbr(unsigned int);
 char *my_put_lnbr(long);
@@ -91,6 +92,7 @@ static my_struct_t const types[] = {
     {"hi", di_format_f},
     {"li", ldi_format_f},
     {"lli", lldi_format_f},
+    {"zi", zdi_format_f},
     {"s", s_format_f},
 //    {"f", f_format_f},
 //    {"F", F_format_f},

@@ -37,7 +37,7 @@ SRC	= my_revstr.c	\
 			my_strncmp.c	\
 			my_strcpy.c	\
 			my_strlen.c	\
-			my_putnbr_base.c	\
+			my_putptr_base.c	\
 			my_fexpn.c	\
 			my_printf.c	\
 			my_put_unbr.c	\
