@@ -29,9 +29,6 @@ Test (my_strstr, test_if_my_strstr_works)
     char test7[] = "l";
     char test8[] = "";
 
-    printf("my_strstr(test6, test1) = %s == strstr(test6, test1) = %s\n", my_strstr(test6, test1), strstr(test6, test1));
-    printf("my_strstr(test6, test1) = %s == strstr(test6, test1) = %s\n", my_strstr("H", "Hello"), strstr("H", "Hello"));
-
     cr_assert(my_strstr(test1, test1) == strstr(test1, test1));
     cr_assert(my_strstr(test1, test2) == strstr(test1, test2));
     cr_assert(my_strstr(test1, test3) == strstr(test1, test3));
