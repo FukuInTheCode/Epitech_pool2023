@@ -5,6 +5,8 @@
 ** square1.c
 */
 
+#include "my.h"
+
 void draw(int x, int y, char *str)
 {
     my_putchar(str[2]);
