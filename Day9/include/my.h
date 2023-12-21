@@ -30,6 +30,9 @@ int my_getnbr_base(char const *, char const *);
 int my_getnbr(char const *);
 void my_sort_int_array(int *, int);
 int my_compute_power_rec(int, int);
+int my_compute_factorial_rec(int);
+int my_compute_factorial_it(int);
+int my_compute_power_it(int, int);
 int my_compute_square_root(int);
 int my_is_prime(int);
 int my_find_is_prime(int);
@@ -61,4 +64,7 @@ struct info_param *my_params_to_array(int, char **);
 int my_show_param_array(INFO_T *const);
 int get_color(unsigned char, unsigned char, unsigned char);
 int swap_endian_color(int color);
+int count_valid_queens_placements(int);
+int my_find_prime_sup(int);
+char *my_strstr(char *str, char const *);
 #endif
