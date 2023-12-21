@@ -12,12 +12,20 @@
     #include <criterion/redirect.h>
     #include <stdio.h>
     #include <stdint.h>
-    #include "my_opp.h"
 
     #define MAX_INTEGER 2147483647
     #define MIN_INTEGER -2147483648
     #define GETNBR_CHECK (is_int_stred(str[i]) || is_sign_stred(str[i]))
     #define SORTING_FUNC  int(*cmp)(char const *, char const *)
+
+typedef int (*op_func)(int, int);
+
+struct operator {
+    char *op;
+    op_func f;
+};
+
+    #include "my_opp.h"
 
 void my_putchar(char);
 int my_isneg(int);
