@@ -7,7 +7,7 @@
 
 static char to_lower(char a)
 {
-    if ('A' <= a &&  a <= 'Z')
+    if ('A' <= a && a <= 'Z')
         return a + 'a' - 'A';
     return a;
 }
