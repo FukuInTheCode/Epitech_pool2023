@@ -10,9 +10,9 @@
 
 Test(my_strcmp, compare_two_whole_str)
 {
-    cr_assert(my_strcmp("AB2", "AB1") > 0);
-    cr_assert(my_strcmp("AB2", "ABC3") < 0);
-    cr_assert(my_strcmp("ABC", "ABC") == 0);
-    cr_assert(my_strcmp("AB", "ABC") == 0);
-    cr_assert(my_strcmp("ABCD", "ABC") == 0);
+    cr_assert(my_strcmp("AB3", "AB1") == strcmp("AB3", "AB1"));
+    cr_assert(my_strcmp("AB2", "ABC3") == strcmp("AB2", "ABC3"));
+    cr_assert(my_strcmp("ABC", "ABC") == strcmp("ABC", "ABC"));
+    cr_assert(my_strcmp("AB", "ABC") == strcmp("AB", "ABC"));
+    cr_assert(my_strcmp("ABCD", "ABC") == strcmp("ABCD", "ABC"));
 }

@@ -9,10 +9,16 @@
 
 int my_strncmp(char const *s1, char const *s2, int n)
 {
-    char s1_cpy[n + 1];
-    char s2_cpy[n + 1];
+    char str1[2] = {0};
+    char str2[2] = {0};
 
-    my_strncpy(s1_cpy, s1, n);
-    my_strncpy(s2_cpy, s2, n);
-    return my_strcmp(s1_cpy, s2_cpy);
+    if (n < 0)
+        return my_strcmp(s1, s2);
+    for (int i = 0; i < n; i++) {
+        str1[0] = s1[i];
+        str2[0] = s2[i];
+        if (my_strcmp(str1, str2) != 0)
+            return my_strcmp(str1, str2);
+    }
+    return 0;
 }

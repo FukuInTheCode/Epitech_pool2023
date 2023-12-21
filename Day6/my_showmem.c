@@ -42,7 +42,6 @@ int my_showmem(char const *str, int size)
         }
         for (int k = j; k < 17; k++)
             write(1, "  ", 1 + (j % 2));
-        printf("j == %d", j);
         write(1, "  ", 2 * (j % 2 == 0 && j != 16));
         for (int j = 0; j < 16 && i + j < size; j++)
             show_char(str[i + j]);
