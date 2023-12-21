@@ -16,9 +16,9 @@ static int verrify_3(int size[2], int x, int y, char c)
         return 0;
     if ((x == 0 || x == l - 1 || y == 0 || y == h - 1) && c == 'B')
         return 0;
-    if (x == 0 && (y == 0 || y == h - 1) && c == 'A')
+    if (y == 0 && (x == 0 || x == l - 1) && c == 'A')
         return 0;
-    if (x == l - 1 && (y == h - 1 || y == 0) && c == 'C')
+    if (y == h - 1 && (x == l - 1 || x == 0) && c == 'C')
         return 0;
     if (x != 0 && x != l - 1 && y != 0 && y != h - 1 && c == ' ')
         return 0;
