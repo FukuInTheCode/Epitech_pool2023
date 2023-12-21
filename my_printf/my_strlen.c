@@ -7,9 +7,9 @@
 
 #include "include/my.h"
 
-int my_strlen(char const *str)
+size_t my_strlen(char const *str)
 {
-    int len = 0;
+    size_t len = 0;
 
     for (; str[len]; len++);
     return len;
