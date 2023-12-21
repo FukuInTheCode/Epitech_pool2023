@@ -22,6 +22,7 @@ char *my_strcapitalize(char *str)
 {
     char diff = 'A' - 'a';
 
+    my_strlowcase(str);
     str[0] += diff * ('a' <= str[0] && str[0] <= 'z');
     for (int i = 1; str[i] != '\0'; i++) {
         if (check_char(str[i - 1]))
