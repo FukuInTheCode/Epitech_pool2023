@@ -67,6 +67,7 @@ int my_printf(char const *format, ...)
 {
     va_list args;
     char *buffer = malloc(1);
+    int ret;
 
     buffer[0] = 0;
     va_start(args, format);
@@ -77,5 +78,7 @@ int my_printf(char const *format, ...)
             add_buffer(&buffer, (void *)(format + i), 1);
     }
     va_end(args);
-    return write(1, buffer, my_strlen(buffer));
+    ret = write(1, buffer, my_strlen(buffer));
+    free(buffer);
+    return ret;
 }
