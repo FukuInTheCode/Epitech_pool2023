@@ -52,10 +52,13 @@ char *my_strncat(char *, char const *, int);
 char *my_revstr(char *);
 int my_getnbr(char const *);
 int my_strncmp(char const *, char const *, int);
-int c_format_f(char **, va_list, my_flags_t *);
-int di_format_f(char **, va_list, my_flags_t *);
 int add_buffer(char **, char *, int);
 char *my_put_nbr(int);
+char *my_put_float(double, int);
+int my_fexpn(double, int, double *);
+int c_format_f(char **, va_list, my_flags_t *);
+int di_format_f(char **, va_list, my_flags_t *);
+int e_format_f(char **, va_list, my_flags_t *);
 
 static my_struct_t const types[] = {
     {"c", c_format_f},
@@ -68,7 +71,7 @@ static my_struct_t const types[] = {
 //    {"o", o_format_f},
 //    {"x", x_format_f},
 //    {"X", X_format_f},
-//    {"e", e_format_f},
+    {"e", e_format_f},
 //    {"E", E_format_f},
 //    {"g", g_format_f},
 //    {"G", G_format_f},
