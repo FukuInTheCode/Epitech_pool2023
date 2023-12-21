@@ -7,7 +7,7 @@
 
 #include "include/my.h"
 
-char *my_putptr_base(size_t n, char *base)
+char *my_putp_base(size_t n, char *base)
 {
     int len = my_strlen(base);
     char *buf = malloc(1);
