@@ -16,6 +16,8 @@ CC	   = cc
 
 CFLAGS = -Wall -Wextra
 
+LIBS = -lcriterion -L../lib/ -lmy
+
 all: $(NAME)
 
 $(NAME): Build
@@ -26,7 +28,7 @@ Build:
 	@$(CC) $(CFLAGS) -c $(SRC) -L../lib -lmy
 
 tests_run:
-	@$(CC) $(CFLAGS) cat.c ../tests/test_cat.c $(CRITERION) -o $(NAME_T)
+	@$(CC) $(CFLAGS) cat.c ../tests/test_cat.c $(LIBS) -o $(NAME_T)
 	@cd ../tests && ./test_run && rm ./test_run && cd ../cat
 
 clean:

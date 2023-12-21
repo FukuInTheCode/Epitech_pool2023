@@ -7,9 +7,14 @@
 
 #include "../include/my.h"
 
-Test(cat, same_shit_as_cat_linuw)
+Test(cat, check_if_file_is_a_missing)
 {
-    int ret = cat(2, (char *[2]){"prout", "./t.txt"});
-    cr_assert(ret == 0);
+    char *av[] = {"a.c", "a.c"};
+    cr_assert_eq(cat(2, av), 84);
 }
 
+Test(cat, check_if_file_is_a_dir)
+{
+    char *av[] = {"test2/", "test2/"};
+    cr_assert_eq(cat(2, av), 84);
+}
