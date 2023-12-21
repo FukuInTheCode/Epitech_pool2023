@@ -90,6 +90,7 @@ typedef struct {
 static my_struct_t const corner_0[] = {
     {"o", rush1_1},
     {"/", rush1_2},
+    {"*", rush1_2},
     {"A", rush1_345},
     {"B", rush1_345_line},
     {NULL, NULL}
