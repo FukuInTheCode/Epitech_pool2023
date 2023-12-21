@@ -168,7 +168,7 @@ By default the width of a field will be the minimum required to hold the data. T
 <br>
 
 ### Precision :
-The precision is written " .number ", and has slightly different meanings for the fdifferent conversion specifiers (like d or g). <br>
+The precision is written " .number ", and has slightly different meanings for the different conversion specifiers (like d or g). <br>
 - For floating point number (like e, g or f), it controls the number orinted after the decimal point.
 - For integers (like d), it controls the minimum number of digits printed.
 - For strings (like s), it controls the maximum length of the string displayed.
