@@ -79,4 +79,5 @@ int my_delete_nodes(linked_list_t **, void const *, int(*cmp)());
 void my_concat_list(linked_list_t **begin1, linked_list_t *begin2);
 void my_sort_list(linked_list_t **, int(*cmp)());
 void my_add_in_sorted_list(linked_list_t **, void *, int(*cmp)());
+void my_merge(linked_list_t **, linked_list_t *, int(*cmp)());
 #endif
