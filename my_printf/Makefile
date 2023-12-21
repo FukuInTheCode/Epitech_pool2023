@@ -9,28 +9,19 @@ NAME   = libmy.a
 
 CC	   = gcc
 
-CFLAGS = -Wall -Wextra -Wno-unused-value -Wno-sign-compare
+CFLAGS = -Wall -Wextra -Wno-unused-value
 
 SRC	= my_revstr.c	\
 			my_put_float.c	\
 			my_put_nbr.c	\
 			my_strncat.c	\
 			my_getnbr.c	\
-			formats/p_format.c	\
-			formats/o_format.c	\
-			formats/x_format.c	\
-			formats/xmaj_format.c	\
 			formats/a_format.c	\
 			formats/amaj_format.c	\
 			formats/e_format.c	\
 			formats/emaj_format.c	\
 			formats/u_format.c	\
 			formats/n_format.c	\
-			formats/hhn_format.c	\
-			formats/hn_format.c	\
-			formats/ln_format.c	\
-			formats/zn_format.c	\
-			formats/lln_format.c	\
 			formats/s_format.c	\
 			formats/di_format.c	\
 			formats/ldi_format.c	\
