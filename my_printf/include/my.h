@@ -59,7 +59,9 @@ char *my_put_unbr(unsigned int);
 char *my_put_lnbr(long);
 char *my_put_llnbr(long long);
 char *my_put_float(double, int);
+char *my_put_lfloat(long double, int);
 int my_fexpn(double, int, double *);
+int my_lfexpn(long double, int, long double *);
 
 int c_format_f(char **, va_list, my_flags_t *);
 
@@ -70,6 +72,7 @@ int lldi_format_f(char **, va_list, my_flags_t *);
 
 int amaj_format_f(char **, va_list, my_flags_t *);
 int a_format_f(char **, va_list, my_flags_t *);
+int lmaja_format_f(char **, va_list, my_flags_t *);
 
 int e_format_f(char **, va_list, my_flags_t *);
 int emaj_format_f(char **, va_list, my_flags_t *);
@@ -113,8 +116,8 @@ static my_struct_t const types[] = {
     {"lli", lldi_format_f},
     {"zi", zdi_format_f},
     {"s", s_format_f},
-//    {"f", f_format_f},
-//    {"F", F_format_f},
+    {"f", f_format_f},
+    {"F", f_format_f},
     {"u", u_format_f},
     {"o", o_format_f},
     {"x", x_format_f},
@@ -127,6 +130,7 @@ static my_struct_t const types[] = {
     {"hha", a_format_f},
     {"ha", a_format_f},
     {"la", a_format_f},
+//    {"La", lmaja_format_f},
     {"lla", a_format_f},
     {"A", amaj_format_f},
     {"hhA", amaj_format_f},

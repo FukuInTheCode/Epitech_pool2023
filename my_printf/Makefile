@@ -13,6 +13,7 @@ CFLAGS = -Wall -Wextra -Wno-unused-value -Wno-sign-compare
 
 SRC	= my_revstr.c	\
 			my_put_float.c	\
+			my_put_lfloat.c	\
 			my_put_nbr.c	\
 			my_strncat.c	\
 			my_getnbr.c	\
@@ -21,6 +22,7 @@ SRC	= my_revstr.c	\
 			formats/x_format.c	\
 			formats/xmaj_format.c	\
 			formats/a_format.c	\
+			formats/lmaja_format.c	\
 			formats/amaj_format.c	\
 			formats/e_format.c	\
 			formats/emaj_format.c	\
@@ -49,6 +51,7 @@ SRC	= my_revstr.c	\
 			my_strlen.c	\
 			my_putptr_base.c	\
 			my_fexpn.c	\
+			my_lfexpn.c	\
 			my_printf.c	\
 			my_put_unbr.c	\
 			my_put_lnbr.c	\
