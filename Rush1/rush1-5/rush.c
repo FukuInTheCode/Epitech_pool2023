@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "my.h"
+#include "../my.h"
 
 int rush(int x, int y)
 {
@@ -13,5 +13,6 @@ int rush(int x, int y)
         write(2, "Invalid size\n", 13);
         return 0;
     }
-    return draw(x, y, "BBACCA");
+    draw(x, y, "BBACCA", 0);
+    return 1;
 }
