@@ -14,6 +14,12 @@ static int is_alphanum(char c)
     return ('a' <= c && c <= 'z') + ('A' <= c && c <= 'Z');
 }
 
+static int dup_str(char **ret, size_t sub_i, char *tmp, int i)
+{
+    ret[sub_i] = my_strdup(tmp + i);
+    return my_strlen(tmp + i);
+}
+
 char **my_str_to_word_array(char const *str)
 {
     char **ret = NULL;
@@ -31,9 +37,9 @@ char **my_str_to_word_array(char const *str)
     for (int i = 0; str[i]; i++) {
         if (!tmp[i])
             continue;
-        ret[sub_i++] = my_strdup(tmp + i);
-        i += my_strlen(tmp + i);
+        i += dup_str(ret, sub_i++, tmp, i);
     }
     ret[count] = NULL;
+    free(tmp);
     return ret;
 }
