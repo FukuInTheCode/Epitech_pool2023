@@ -14,4 +14,3 @@ int my_list_size(linked_list_t const *begin)
     for (; begin; begin = (begin + ret - ret++)->next);
     return ret;
 }
-

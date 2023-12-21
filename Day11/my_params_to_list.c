@@ -9,7 +9,7 @@
 
 static void link_next(linked_list_t **list, char const *arg)
 {
-    linked_list_t *tmp= malloc(sizeof(linked_list_t));
+    linked_list_t *tmp = malloc(sizeof(linked_list_t));
 
     if (tmp == NULL)
         return;
@@ -29,4 +29,3 @@ linked_list_t *my_params_to_list(int ac, char const **av)
     for (int i = 1; i < ac; link_next(&ret, av[i++]));
     return ret;
 }
-
