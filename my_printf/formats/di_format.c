@@ -5,7 +5,7 @@
 ** di
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 static int di_format_f2(char **buf_di, int nbr, my_flags_t *flgs)
 {

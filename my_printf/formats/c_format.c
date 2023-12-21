@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 int c_format_f(char **buffer, va_list args, my_flags_t *flgs)
 {

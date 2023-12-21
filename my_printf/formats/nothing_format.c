@@ -5,7 +5,7 @@
 ** s
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 int nothing_format_f(char **buffer, va_list args, my_flags_t *flgs)
 {

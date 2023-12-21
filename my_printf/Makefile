@@ -10,7 +10,7 @@ NAME   = libmy.a
 CC	   = gcc
 
 CFLAGS = -Wall -Wextra -Wno-unused-value -Wno-sign-compare \
-	-Wno-unused-parameter
+	-Wno-unused-parameter -I./include
 
 SRC	= my_revstr.c	\
 			my_put_float.c	\

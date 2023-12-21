@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "include/my.h"
+#include "my.h"
 
 static char is_int_stred(char c)
 {

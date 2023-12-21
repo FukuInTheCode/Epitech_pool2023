@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "include/my.h"
+#include "my.h"
 
 char *my_put_lfloat(long double n, int precision)
 {

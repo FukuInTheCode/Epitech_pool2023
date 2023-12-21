@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 static int formating_buffer(char **buffer, my_flags_t *flgs)
 {

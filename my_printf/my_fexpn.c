@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "include/my.h"
+#include "my.h"
 
 int my_fexpn(double x, int n, double *mantissa)
 {

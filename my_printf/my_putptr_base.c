@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "include/my.h"
+#include "my.h"
 
 char *my_putptr_base(size_t n, char *base)
 {

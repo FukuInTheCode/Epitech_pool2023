@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 static int call_e(my_flags_t *flgs, double nbr, char **buffer, ...)
 {

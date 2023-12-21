@@ -5,7 +5,7 @@
 ** u
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 void u_format_f2(char **buf_u, int nbr, my_flags_t *flgs)
 {

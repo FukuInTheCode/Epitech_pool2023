@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 static void call_di_format(char **buffer, ...)
 {

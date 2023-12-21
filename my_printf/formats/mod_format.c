@@ -5,7 +5,7 @@
 ** format % for my_printf
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 int mod_format_f(char **buffer, va_list args, my_flags_t *flgs)
 {

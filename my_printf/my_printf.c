@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "include/my.h"
+#include "my.h"
 
 
 static bool is_flags(char c)

@@ -5,7 +5,7 @@
 ** F
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 static int f_format_f2(char **buf_f, double nbr, my_flags_t *flgs)
 {

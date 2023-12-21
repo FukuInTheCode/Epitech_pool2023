@@ -5,7 +5,7 @@
 ** new my_put_nbr for myprintf
 */
 
-#include "include/my.h"
+#include "my.h"
 
 char *my_put_llnbr(long long nb)
 {

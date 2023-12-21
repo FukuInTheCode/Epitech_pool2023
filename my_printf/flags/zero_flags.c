@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 int zero_flag_f(my_flags_t *flgs)
 {
