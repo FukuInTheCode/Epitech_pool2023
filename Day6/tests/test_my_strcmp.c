@@ -15,4 +15,5 @@ Test(my_strcmp, compare_two_whole_str)
     cr_assert(my_strcmp("ABC", "ABC") == strcmp("ABC", "ABC"));
     cr_assert(my_strcmp("AB", "ABC") == strcmp("AB", "ABC"));
     cr_assert(my_strcmp("ABCD", "ABC") == strcmp("ABCD", "ABC"));
+    cr_assert(my_strcmp("Hello", "Helo") == strcmp("Hello", "Helo"));
 }

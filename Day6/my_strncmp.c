@@ -9,16 +9,13 @@
 
 int my_strncmp(char const *s1, char const *s2, int n)
 {
-    char str1[2] = {0};
-    char str2[2] = {0};
+    int i = 0;
 
-    if (n < 0)
-        return my_strcmp(s1, s2);
-    for (int i = 0; i < n; i++) {
-        str1[0] = s1[i];
-        str2[0] = s2[i];
-        if (my_strcmp(str1, str2) != 0)
-            return my_strcmp(str1, str2);
-    }
-    return 0;
+    if (0 > n)
+        n = 99999;
+    for (; i < n && s1[i] && s2[i] && s1[i] == s2[i]; i++)
+        continue;
+    if ((s1[i] == '\0' && s2[i] == '\0') || i == n)
+        return 0;
+    return s1[i] - s2[i];
 }
