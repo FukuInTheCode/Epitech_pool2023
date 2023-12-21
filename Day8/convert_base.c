@@ -35,7 +35,7 @@ char *convert_base(char const *nbr, char const *base_from, char const *base_to)
     if (len == 0 || len == 1)
         return NULL;
     if (n == 0) {
-        new_n[0] = base_to[0];
+        new_n[0] = '0';
         return new_n;
     }
     convert_to_base_to(n, new_n, base_to);
