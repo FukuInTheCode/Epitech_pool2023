@@ -14,7 +14,8 @@ void print_last(int x , int y, char *str)
         for (int i = 0; i < x - 2; i++) {
             my_putchar(str[0]);
         }
-        my_putchar(str[2]);
+        if (x != 1)
+            my_putchar(str[2]);
         my_putchar('\n');
     }
 }
