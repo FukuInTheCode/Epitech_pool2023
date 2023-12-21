@@ -20,3 +20,8 @@ int rush_count(char *str, char a)
         j += (to_lower(str[i]) == to_lower(a));
     return j;
 }
+
+double rush_frequence(char *str , double n)
+{
+    return (n / my_strlen(str));
+}
