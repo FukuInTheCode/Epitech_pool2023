@@ -61,6 +61,7 @@ char *convert_base(char const *, char const *, char const *);
 struct info_param *my_params_to_array(int, char **);
 int my_show_param_array(INFO_T *const);
 int get_color(unsigned char, unsigned char, unsigned char);
+int swap_endian_color(int color);
 #endif
 
 #ifdef ENVIE_DE_MOURIR
