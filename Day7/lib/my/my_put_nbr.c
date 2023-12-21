@@ -9,37 +9,34 @@
 
 static void my_min_put(void)
 {
-    write(1, "-", 1);
-    write(1, "2", 1);
-    write(1, "1", 1);
-    write(1, "4", 1);
-    write(1, "7", 1);
-    write(1, "4", 1);
-    write(1, "8", 1);
-    write(1, "3", 1);
-    write(1, "6", 1);
-    write(1, "4", 1);
-    write(1, "8", 1);
+    my_putchar('-');
+    my_putchar('2');
+    my_putchar('1');
+    my_putchar('4');
+    my_putchar('7');
+    my_putchar('4');
+    my_putchar('8');
+    my_putchar('3');
+    my_putchar('6');
+    my_putchar('4');
+    my_putchar('8');
 }
 
 static void my_print(int nb)
 {
     long rev_nb = 10;
-    char to_print;
 
     if (nb < 0) {
         nb *= -1;
-        write(1, "-", 1);
+        my_putchar('-');
     }
     for (; nb != 0; nb = (nb - nb % 10) / 10) {
         rev_nb += nb % 10;
         rev_nb *= 10;
     }
     rev_nb /= 10;
-    for (; rev_nb != 1; rev_nb = (rev_nb - rev_nb % 10) / 10) {
-        to_print = 48 + rev_nb % 10;
-        write(1, &to_print, 1);
-    }
+    for (; rev_nb != 1; rev_nb = (rev_nb - rev_nb % 10) / 10)
+        my_putchar(48 + rev_nb % 10);
 }
 
 int my_put_nbr(int nb)
@@ -49,7 +46,7 @@ int my_put_nbr(int nb)
         return 0;
     }
     if (nb == 0) {
-        write(1, "0", 1);
+        my_putchar('0');
         return 0;
     }
     my_print(nb);
