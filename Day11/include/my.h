@@ -75,4 +75,5 @@ int my_apply_on_matching_nodes(linked_list_t *, int(*f)(),
     void const *data_ref, int(*cmp)());
 linked_list_t *my_find_node(linked_list_t const *, void const *,
     int(*cmp)());
+int my_delete_nodes(linked_list_t **, void const *, int(*cmp)());
 #endif
