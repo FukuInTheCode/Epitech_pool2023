@@ -46,7 +46,7 @@ static void init_buf(int nbr, my_flags_t *flgs, char **buf_di)
     }
 }
 
-int fmaj_format_f(char **buffer, va_list args, my_flags_t *flgs)
+int f_format_f(char **buffer, va_list args, my_flags_t *flgs)
 {
     double nbr = va_arg(args, double);
     int tmp_len;
@@ -59,7 +59,7 @@ int fmaj_format_f(char **buffer, va_list args, my_flags_t *flgs)
     my_revstr(buf_f);
     tmp_len = my_strlen(buf_f);
     if (tmp_len < flgs->width) {
-        (flgs->has_minus == 0) && my_revstr(buf_fmaj);
+        (flgs->has_minus == 0) && my_revstr(buf_f);
         for (int i = 0; i < flgs->width - tmp_len; i++)
             add_buffer(&buf_f, " ", 1);
         if (flgs->has_minus == 0)
