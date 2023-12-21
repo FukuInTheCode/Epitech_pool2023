@@ -10,6 +10,7 @@
 static void print_freq(double x)
 {
     int mod_100 = (int)x % 100;
+
     my_put_nbr(mod_100);
     my_putchar('.');
     if ((int)((x - mod_100) * 100) < 10)

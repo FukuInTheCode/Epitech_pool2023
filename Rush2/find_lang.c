@@ -67,7 +67,6 @@ static double my_sqrt(double n)
     return x;
 }
 
-
 void find_lang(char *str)
 {
     int letter_freq = 0;
