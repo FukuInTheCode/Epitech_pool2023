@@ -21,7 +21,7 @@ static long my_recursif(int nb, int p, int i)
 
 int my_compute_power_rec(int nb, int p)
 {
-    if (p < 0 || (p == 0 && nb == 0))
+    if (p < 0)
         return 0;
     return (int)my_recursif(nb, p, 1);
 }
