@@ -7,7 +7,7 @@
 
 NAME   = do_op
 
-CC	   = cc
+CC	   = gcc
 
 CFLAGS = -Werror -Wall -Wextra
 
@@ -17,11 +17,10 @@ SRC	= main.c \
 all: build clean
 
 build: $(SRC)
-	@cd ../lib/my && make && cd ../../do_op
-	@$(CC) $(CFLAGS) $(SRC) -L../lib -lmy -o $(NAME)
+	@$(CC) $(CFLAGS) $(SRC) -L../lib -lmy -c
+	@$(CC) $(CFLAGS) *.o -o $(NAME)
 
 fclean: clean
-	@cd ../lib/my && make clean && cd ../../do_op
 	@rm -f $(NAME)
 
 clean:
