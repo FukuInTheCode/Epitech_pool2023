@@ -24,6 +24,7 @@ void my_swap(int *, int *);
 int my_putstr(char const *);
 int my_strlen(char const *);
 int my_putnbr_base(int, char const *);
+int my_getnbr_base(char const *, char const *);
 int my_getnbr(char const *);
 void my_sort_int_array(int *, int);
 int my_compute_power_rec(int, int);
@@ -53,4 +54,5 @@ int is_end_combn(int, int);
 char *concat_params(int, char **);
 int my_show_word_array(char const **);
 char **my_str_to_word_array(char const *str);
+char *convert_base(char const *, char const *, char const *);
 #endif
