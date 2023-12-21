@@ -13,7 +13,8 @@ int add_buffer(char **buffer, char *to_add, int n)
 
     if (!new_buf)
         return -1;
-    for (int i = 0; i < my_strlen(*buffer) + my_strlen(to_add) + 1; new_buf[i++] = 0);
+    for (int i = 0; i < my_strlen(*buffer) + my_strlen(to_add) + 1;
+        new_buf[i++] = 0);
     my_strcpy(new_buf, *buffer);
     free(*buffer);
     *buffer = my_strncat(new_buf, to_add, n);
