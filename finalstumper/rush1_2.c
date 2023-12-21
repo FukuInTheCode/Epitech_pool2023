@@ -14,9 +14,9 @@ static int verrify_2(int size[2], int x, int y, char c)
 
     if (x == l && c == '\n')
         return 0;
-    if ((x == 0 && y == h - 1) || (x == l - 1 && y = 0) && c == '/')
+    if ((x == 0 && y == h - 1) || (x == l - 1 && y == 0) && c == '/')
         return 0;
-    if ((x == 0 && y == 0) || (x = l - 1 && y = h - 1) && c == '\\')
+    if ((x == 0 && y == 0) || (x = l - 1 && y == h - 1) && c == '\\')
         return 0;
     if ((x == 0 || x == l - 1 || y == 0 || y == h - 1) && c == '*')
         return 0;
@@ -31,7 +31,6 @@ static int is_correct_2(char *str, int size[2])
     int h = size[1];
     int error = 0;
 
-    error += verrify(size, 0, 0, str[0]);
     for (int y = 0; y != h; y++)
         for (int x = 0; x != l; x++)
             error += verrify_2(size, x, y, str[x + (l + 1) * y]);
