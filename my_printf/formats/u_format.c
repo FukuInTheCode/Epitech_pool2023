@@ -43,5 +43,6 @@ int u_format_f(char **buffer, va_list args, my_flags_t *flgs)
             my_revstr(buf_u);
     }
     add_buffer(buffer, buf_u, my_strlen(buf_u));
-    return 0;
+    free(buf_u);
+    return (0);
 }
