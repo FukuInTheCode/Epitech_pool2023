@@ -10,6 +10,7 @@
     #include <unistd.h>
     #include <stdio.h>
     #include <stdint.h>
+    #include <limits.h>
     #include <errno.h>
     #include <criterion/criterion.h>
     #include <criterion/redirect.h>
@@ -18,6 +19,7 @@
     #define MIN_INTEGER -2147483648
     #define GETNBR_CHECK (is_int_stred(str[i]) || is_sign_stred(str[i]))
     #define SORTING_FUNC  int(*cmp)(char const *, char const *)
+    #define BUFF_SIZE 320000
 
 void my_putchar(char);
 int my_isneg(int);
@@ -68,6 +70,8 @@ char *my_strstr(char *str, char const *);
 int my_sort_word_array(char **);
 int my_advanced_sort_word_array(char **, SORTING_FUNC);
 void add_buffer(char **, char *, int);
+int rush1_1(char **, char *, int[2]);
+int rush3(char *);
 
 typedef int(*rush_func)();
 
@@ -78,9 +82,9 @@ typedef struct {
 
 static my_struct_t const corner_0[] = {
     {"o", rush1_1},
-    {"/", rush1_2},
-    {"A", rush1_345},
-    {"B", rush1_345_line},
+//    {"/", rush1_2},
+//    {"A", rush1_345},
+//    {"B", rush1_345_line},
     {NULL, NULL}
 };
 

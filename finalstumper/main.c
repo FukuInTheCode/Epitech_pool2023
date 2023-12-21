@@ -18,6 +18,6 @@ int main(void)
         BUFF_SIZE - my_strlen(buffer)));
     if (len < 0)
         return 84;
-    write(1, buffer, my_strlen(buffer));
+    rush3(buffer);
     return 0;
 }

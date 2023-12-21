@@ -8,7 +8,7 @@
 #include "include/rush3.h"
 
 
-int rush1_1(char **buffer, int size[3])
+int rush1_1(char **buffer, char *input, int size[3])
 {
     char *name = "[rush1-1] ";
     char *size_str[] = {
