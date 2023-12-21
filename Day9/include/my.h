@@ -12,10 +12,13 @@
     #include <criterion/redirect.h>
     #include <stdio.h>
     #include <stdint.h>
+    #include "macro_abs.h"
 
     #define MAX_INTEGER 2147483647
     #define MIN_INTEGER -2147483648
     #define GETNBR_CHECK (is_int_stred(str[i]) || is_sign_stred(str[i]))
+    #define ENVIE_DE_MOURIR
+    #define INFO_T struct info_param
 
 void my_putchar(char);
 int my_isneg(int);
@@ -55,4 +58,14 @@ char *concat_params(int, char **);
 int my_show_word_array(char const **);
 char **my_str_to_word_array(char const *str);
 char *convert_base(char const *, char const *, char const *);
+struct info_param *my_params_to_array(int, char **);
+#endif
+
+#ifdef ENVIE_DE_MOURIR
+struct info_param {
+    int length;
+    char *str;
+    char *copy;
+    char **word_array;
+};
 #endif
