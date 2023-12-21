@@ -26,7 +26,5 @@ char *my_strstr(char *str, char const *to_find)
         else
             current_start = -1;
     }
-    if (j == to_find_len)
-        return str + current_start;
-    return 0;
+    return str + current_start;
 }
