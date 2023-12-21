@@ -5,6 +5,8 @@
 ** new my_put_nbr for myprintf
 */
 
+#include "include/my.h"
+
 char *my_put_nbr(int nb)
 {
     char *buffer = malloc(1);
