@@ -12,5 +12,5 @@ Test(my_strstr, find_first_occurence_of_str_in_str)
 {
     char str[] = "HelloWorld";
 
-    cr_assert_str_eq(my_strstr(str, "World"), "World");
+    cr_assert_str_eq(my_strstr("HelloWorld", "World"), str + 5);
 }
