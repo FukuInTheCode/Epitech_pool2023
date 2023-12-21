@@ -59,7 +59,8 @@ int my_show_word_array(char const **);
 char **my_str_to_word_array(char const *str);
 char *convert_base(char const *, char const *, char const *);
 struct info_param *my_params_to_array(int, char **);
-int my_show_param_array(INFO_T const *);
+int my_show_param_array(INFO_T *const);
+int get_color(unsigned char, unsigned char, unsigned char);
 #endif
 
 #ifdef ENVIE_DE_MOURIR
