@@ -15,8 +15,9 @@ int *count(char *str, int size[2])
     for (int i = 0; str[i] != '\0'; i++)
         if (str[i] == '\n')
             high++;
-    for (int i = 0; str[i] != '\n'; i++)
+    for (int i = 0; str[i] != '\n' && str[i] != '\0'; i++){
         len++;
+    }
     size[0] = len;
     size[1] = high;
     return size;
