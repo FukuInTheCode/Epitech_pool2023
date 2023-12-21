@@ -5,6 +5,8 @@
 ** rush2
 */
 
+#include "include/my.h"
+
 static char to_lower(char a)
 {
     if ('A' <= a && a <= 'Z')

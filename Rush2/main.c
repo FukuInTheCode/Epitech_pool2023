@@ -10,9 +10,9 @@
 static void print_freq(double x)
 {
     int mod_100 = (int)x % 100;
-    my_putnbr(mod_100);
+    my_put_nbr(mod_100);
     my_putchar('.');
-    my_putchar((int)((x - mod_100) * 100));
+    my_put_nbr((int)((x - mod_100) * 100));
 }
 
 int main(int argc, char *argv[])
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         count_tmp = rush_count(argv[1], *(argv[i]));
         my_put_nbr(count_tmp);
         write(1, " (", 2);
-        print_feq(rush_frequence(argv[1], count_tmp));
+        print_freq(100 * rush_frequence(argv[1], count_tmp));
         write(1, "%)\n", 3);
     }
     return 0;
