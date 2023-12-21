@@ -11,15 +11,11 @@
 
 static int read_stdin(void)
 {
-<<<<<<< HEAD
-    for (char buffer[32001]; ; write(1, buffer, read(0, buffer, 32000)));
-=======
     char buffer[32001] = {0};
 
     for (size_t len = read(0, buffer, 32000); len > 0;
             len = read(0, buffer, 32000))
         write(1, buffer, len);
->>>>>>> 6a0839e ([~] Update.)
     return 0;
 }
 
