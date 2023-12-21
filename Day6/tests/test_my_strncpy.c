@@ -22,3 +22,11 @@ Test(my_strcpy, copy_whole_str)
     my_strncpy(dest, "Hello", 5);
     cr_assert_str_eq(dest, "Hello");
 }
+
+Test(my_strcpy, copy_whole_str_but_n_too_big)
+{
+    char dest[6] = {0};
+
+    my_strncpy(dest, "Hello", 17);
+    cr_assert_str_eq(dest, "Hello");
+}
