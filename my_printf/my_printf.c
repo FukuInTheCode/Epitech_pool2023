@@ -22,9 +22,12 @@ static int get_flags(char **buffer, char const *fmt, int *i, va_list args)
     for (; is_flags(fmt[j]); j++)
         for (int k = 0; flags[k].c; fmt[j] == flags[k++].c[0] &&
             flags[k - 1].f(&this_flags));
-    this_flags.width += my_getnbr(fmt + j);
+    if ('0' <= fmt[j] && fmt[j] <= '9')
+        this_flags.width = my_getnbr(fmt + j);
     for (; '0' <= fmt[j] && fmt[j] <= '9'; j++);
-    this_flags.precision += my_getnbr(fmt + j);
+    j += (fmt[j] == '.');
+    if ('0' <= fmt[j] && fmt[j] <= '9')
+        this_flags.precision = my_getnbr(fmt + j);
     for (; '0' <= fmt[j] && fmt[j] <= '9'; j++);
     for (int k = 0; types[k].c;
         !my_strncmp(types[k++].c, fmt + j, my_strlen(types[k].c)) &&
