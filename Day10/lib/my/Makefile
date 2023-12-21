@@ -1,6 +1,6 @@
 ##
 ## EPITECH PROJECT, 2023
-## Pool day 03
+## Lib Makefile
 ## File description:
 ## Placeholder
 ##
@@ -15,7 +15,7 @@ build: *.c
 	@$(CC) -c *.c
 	@ar -rcs libmy.a *.o
 	@rm *.o
-	@mv libmy.a ../
+	@cp libmy.a ../
 	@cp *.h ../../include
 
 clean:
