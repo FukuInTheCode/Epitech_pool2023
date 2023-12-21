@@ -12,6 +12,8 @@ static int verrify_1(int size[2], int x, int y, char c)
     int l = size[0];
     int h = size[1];
 
+    if (x == l)
+        return 0;
     if ((x == 0 || x == l - 1) && (y == 0 || y == h - 1) && c == 'o')
         return 0;
     if ((x == 0 || x == l - 1) && c == '|')
