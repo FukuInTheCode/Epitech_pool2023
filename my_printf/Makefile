@@ -9,11 +9,10 @@ NAME   = libmy.a
 
 CC	   = gcc
 
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -Wno-unused-value
 
 SRC	= my_revstr.c	\
 			my_put_float.c	\
-			my_compute_power_it.c	\
 			my_put_nbr.c	\
 			my_strncat.c	\
 			my_getnbr.c	\
@@ -44,7 +43,7 @@ OBJ	= $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
+	@ar -rcs $(NAME) $(OBJ)
 
 clean:
 	@rm -f $(OBJ)
