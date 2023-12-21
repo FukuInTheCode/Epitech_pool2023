@@ -7,15 +7,8 @@
 
 #include "../include/my.h"
 
-int u_format_f(char **buffer, va_list args, my_flags_t *flgs)
+void u_format_f2(char **buffer, int nbr, my_flags_t *flgs)
 {
-    unsigned int nbr = va_arg(args, unsigned int);
-    char *buf_u = my_put_unbr(nbr);
-    int tmp = my_strlen(buf_u);
-
-    if (nbr == 0 && flgs->precision == 0)
-        return (0);
-    my_revstr(buf_u);
     if (tmp < flgs->precision) {
         for (int i = 0; i < flgs->precision - tmp; i++)
             add_buffer(&buf_u, "0", 1);
@@ -25,6 +18,18 @@ int u_format_f(char **buffer, va_list args, my_flags_t *flgs)
         for (int i = (nbr < 0 ); i < flgs->width - tmp; i++)
             add_buffer(&buf_u, "0", 1);
     }
+}
+
+int u_format_f(char **buffer, va_list args, my_flags_t *flgs)
+{
+    unsigned int nbr = va_arg(args, unsigned int);
+    char *buf_u = my_put_unbr(nbr);
+    int tmp = my_strlen(buf_u);
+
+    if (nbr == 0 && flgs->precision == 0)
+        return (0);
+    my_revstr(buf_u);
+    u_format_f2(&buf_u, nbr, flgs);
     my_revstr(buf_u);
     if (tmp < flgs->width) {
         if (flgs->has_minus == 0)
