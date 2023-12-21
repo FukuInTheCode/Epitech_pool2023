@@ -59,6 +59,7 @@ int my_fexpn(double, int, double *);
 int c_format_f(char **, va_list, my_flags_t *);
 int di_format_f(char **, va_list, my_flags_t *);
 int e_format_f(char **, va_list, my_flags_t *);
+int emaj_format_f(char **, va_list, my_flags_t *);
 
 static my_struct_t const types[] = {
     {"c", c_format_f},
@@ -72,7 +73,7 @@ static my_struct_t const types[] = {
 //    {"x", x_format_f},
 //    {"X", X_format_f},
     {"e", e_format_f},
-//    {"E", E_format_f},
+    {"E", emaj_format_f},
 //    {"g", g_format_f},
 //    {"G", G_format_f},
 //    {"a", a_format_f},

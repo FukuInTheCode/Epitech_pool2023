@@ -14,7 +14,6 @@ char *my_put_nbr(int nb)
     long nb2 = nb;
 
     buffer[0] = 0;
-
     if (nb2 < 0)
         nb2 = -nb2;
     for (; nb2 != 0 ; nb2 = nb2 / 10) {
@@ -22,5 +21,5 @@ char *my_put_nbr(int nb)
         add_buffer(&buffer, &tmp, 1);
     }
     my_revstr(buffer);
-    return(buffer);
+    return (buffer);
 }
