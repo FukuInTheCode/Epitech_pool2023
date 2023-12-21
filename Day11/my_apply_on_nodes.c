@@ -10,6 +10,6 @@
 int my_apply_on_nodes(linked_list_t *begin, int(*f)(void *))
 {
     for (; begin; begin = begin->next)
-        f(begin->data);
+        (*f)(begin->data);
     return 0;
 }
