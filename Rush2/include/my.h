@@ -46,4 +46,5 @@ int my_showstr(char const *);
 int my_showmem(char const *, int);
 char *my_strcat(char *, char const *);
 char *my_strncat(char *, char const *, int);
+int rush(char *, char);
 #endif

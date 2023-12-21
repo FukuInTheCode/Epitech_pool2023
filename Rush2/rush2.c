@@ -9,7 +9,7 @@ int rush(char *str , char a)
 {
     int j = 0;
 
-    for (int i = 0; str[i] != '\0' ; i++)
-        j += (str[i] == a || str[i] == (a + 'A' - 'a')
+    for (int i = 0; str[i]; i++)
+        j += (str[i] == a || str[i] == (a + 'A' - 'a');
     return j;
 }
