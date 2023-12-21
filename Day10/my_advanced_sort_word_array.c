@@ -11,7 +11,7 @@ static void my_cmp(char **tab, int i1, int i2, int cmp)
 {
     char *tmp = NULL;
 
-    if (cmp != 1)
+    if (cmp < 1)
         return;
     tmp = tab[i1];
     tab[i1] = tab[i2];
@@ -21,9 +21,8 @@ static void my_cmp(char **tab, int i1, int i2, int cmp)
 int my_advanced_sort_word_array(char **tab, SORTING_FUNC)
 {
     for (int i = 0; tab[i]; i++) {
-        for (int j = 1; tab[j]; j++) {
+        for (int j = 1; tab[j]; j++)
             my_cmp(tab, j - 1, j, cmp(tab[j - 1], tab[j]));
-        }
     }
     return 0;
 }
