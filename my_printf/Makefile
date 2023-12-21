@@ -25,6 +25,7 @@ SRC	= my_revstr.c	\
 			formats/di_format.c	\
 			formats/ldi_format.c	\
 			formats/lldi_format.c	\
+			formats/zdi_format.c	\
 			formats/c_format.c	\
 			buffer_utils.c	\
 			flags/zero_flags.c	\

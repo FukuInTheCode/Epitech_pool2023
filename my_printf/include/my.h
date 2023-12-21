@@ -64,6 +64,7 @@ int c_format_f(char **, va_list, my_flags_t *);
 
 int di_format_f(char **, va_list, my_flags_t *);
 int ldi_format_f(char **, va_list, my_flags_t *);
+int zdi_format_f(char **, va_list, my_flags_t *);
 int lldi_format_f(char **, va_list, my_flags_t *);
 
 int amaj_format_f(char **, va_list, my_flags_t *);
@@ -83,7 +84,7 @@ static my_struct_t const types[] = {
     {"hd", di_format_f},
     {"ld", ldi_format_f},
     {"lld", lldi_format_f},
-    {"zd", u_format_f},
+    {"zd", zdi_format_f},
 //    {"qd", qdi_format_f},
     {"i", di_format_f},
     {"hhi", di_format_f},

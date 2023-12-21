@@ -15,6 +15,7 @@ void u_format_f2(char **buf_u, int nbr, my_flags_t *flgs)
         for (int i = 0; i < flgs->precision - tmp; i++)
             add_buffer(buf_u, "0", 1);
     }
+    tmp = my_strlen(*buf_u);
     if ((tmp < flgs->width) &&
         (flgs->has_zero == 1) && (flgs->has_minus == 0)) {
         for (int i = (nbr < 0 ); i < flgs->width - tmp; i++)
