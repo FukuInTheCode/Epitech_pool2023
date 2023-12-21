@@ -47,7 +47,7 @@ int rush1_3(char **buffer, char *input, int size[2])
         my_put_nbr(size[1])
     };
 
-    if (is_correct_2(input, size) == 84)
+    if (is_correct_3(input, size) == 84)
         return 0;
     add_buffer(buffer, name, my_strlen(name));
     add_buffer(buffer, size_str[0], my_strlen(size_str[0]));
