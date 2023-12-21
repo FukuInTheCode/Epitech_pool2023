@@ -14,6 +14,11 @@ static char to_lower(char a)
     return a;
 }
 
+static int is_alpha(char c)
+{
+    return (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'));
+}
+
 int rush_count(char *str, char a)
 {
     int j = 0;
@@ -25,13 +30,9 @@ int rush_count(char *str, char a)
 
 double rush_frequence(char *str , double n)
 {
-    char **tab = my_str_to_word_array(str);
     double letter_count = 0;
 
-    for (int k = 0; tab[k]; k++) {
-        letter_count += my_strlen(tab[k]);
-        free(tab[k]);
-    }
-    free(tab);
+    for (int i = 0; str[i]; i++)
+        letter_count += is_alpha(str[i]);
     return (n / letter_count);
 }
