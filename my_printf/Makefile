@@ -25,6 +25,7 @@ SRC	= my_revstr.c	\
 			formats/hhn_format.c	\
 			formats/hn_format.c	\
 			formats/ln_format.c	\
+			formats/zn_format.c	\
 			formats/lln_format.c	\
 			formats/s_format.c	\
 			formats/di_format.c	\

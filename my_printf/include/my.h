@@ -83,6 +83,7 @@ int hhn_format_f(char **, va_list, my_flags_t *);
 int hn_format_f(char **, va_list, my_flags_t *);
 int ln_format_f(char **, va_list, my_flags_t *);
 int lln_format_f(char **, va_list, my_flags_t *);
+int zn_format_f(char **, va_list, my_flags_t *);
 
 static my_struct_t const types[] = {
     {"c", c_format_f},
@@ -91,6 +92,7 @@ static my_struct_t const types[] = {
     {"hn", hn_format_f},
     {"ln", ln_format_f},
     {"lln", lln_format_f},
+    {"zn", zn_format_f},
     {"d", di_format_f},
     {"hhd", di_format_f},
     {"hd", di_format_f},
