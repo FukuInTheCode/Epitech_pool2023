@@ -18,7 +18,6 @@ static void sort_list(linked_list_t **begin, int(*cmp)())
         tmp1->data = tmp1->next->data;
         tmp1->next->data = tmp;
     }
-
 }
 
 void my_sort_list(linked_list_t **begin, int(*cmp)())
