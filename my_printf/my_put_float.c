@@ -24,8 +24,9 @@ char *my_put_float(double n, int precision)
     precision && add_buffer(&buf, ".", 1);
     for (int i = 0; i < precision; i++) {
         ln *= 10;
-        tmp = '0' + (int)ln % 10;
+        tmp = '0' + (int)(ln + .5);
         add_buffer(&buf, &tmp, 1);
+        ln -= (int)(ln + .5);
     }
     return buf;
 }
