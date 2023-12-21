@@ -21,6 +21,7 @@ SRC	= my_revstr.c	\
 			my_getnbr.c	\
 			formats/p_format.c	\
 			formats/g_format.c	\
+			formats/gmaj_format.c	\
 			formats/nothing_format.c	\
 			formats/o_format.c	\
 			formats/x_format.c	\
