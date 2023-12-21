@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2023
-** B-CPE-100-LIL-1-1-rush1-ronan.lefeuvre
+** Pool Day Rush1
 ** File description:
 ** square1.c
 */
