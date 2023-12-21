@@ -36,3 +36,13 @@ Test(my_str_to_word_array, with_nchar_that_are_next)
     free(output);
 }
 
+
+Test(my_str_to_word_array, with2_nchar_that_are_next)
+{
+    char *input = "       ";
+    char **output = my_str_to_word_array(input);
+    char *expected[1] = {0};
+    cr_assert(output[0] == expected[0]);
+    free(output);
+}
+

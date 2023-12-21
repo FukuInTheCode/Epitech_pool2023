@@ -46,19 +46,22 @@ static size_t fill_arr(char const *str, char *tmp, char **ret, size_t sub_i)
 char **my_str_to_word_array(char const *str)
 {
     char **ret = NULL;
-    size_t count = 1;
+    size_t count = 0;
     char *tmp = NULL;
     size_t sub_i = 0;
 
     for (int i = 0; str[i]; i++) {
-        if (is_alphanum(str[i - 1]) == 0 && i != 0)
+        if (i != 0 && is_alphanum(str[i - 1]) == 0)
             continue;
         count += is_alphanum(str[i]) == 0;
     }
+    my_put_nbr(count);
     init_tmp(count, &ret, &tmp, str);
-    ret[sub_i] = malloc(my_strlen(tmp) + 1);
-    my_strcpy(ret[sub_i++], tmp + count_first_non_alpha(str));
-    sub_i = fill_arr(str, tmp, ret, sub_i);
+    if (count != 1) {
+        ret[sub_i] = malloc(my_strlen(tmp) + 1);
+        my_strcpy(ret[sub_i++], tmp + count_first_non_alpha(str));
+        sub_i = fill_arr(str, tmp, ret, sub_i);
+    }
     ret[sub_i] = NULL;
     free(tmp);
     return ret;
