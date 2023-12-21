@@ -51,7 +51,6 @@ int my_strlen(char const *);
 char *my_strncat(char *, char const *, int);
 char *my_revstr(char *);
 int my_getnbr(char const *);
-int my_compute_power_it(int, int);
 int my_strncmp(char const *, char const *, int);
 int add_buffer(char **, char *, int);
 char *my_put_nbr(int);
@@ -82,7 +81,7 @@ static my_struct_t const types[] = {
     {"E", emaj_format_f},
 //    {"g", g_format_f},
 //    {"G", G_format_f},
-//    {"a", a_format_f},
+    {"a", a_format_f},
 //    {"A", A_format_f},
 //    {"p", p_format_f},
 //    {"%", mod_format_f},

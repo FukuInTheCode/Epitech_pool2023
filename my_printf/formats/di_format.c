@@ -49,4 +49,5 @@ int di_format_f(char **buffer, va_list args, my_flags_t *flgs)
             my_revstr(buf_di);
     }
     add_buffer(buffer, buf_di, my_strlen(buf_di));
+    return 0;
 }

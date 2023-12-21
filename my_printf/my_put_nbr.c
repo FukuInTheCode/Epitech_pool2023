@@ -16,6 +16,8 @@ char *my_put_nbr(int nb)
     buffer[0] = 0;
     if (nb2 < 0)
         nb2 = -nb2;
+    if (nb == 0 || nb == -0)
+        add_buffer(&buffer, "0", 1);
     for (; nb2 != 0 ; nb2 = nb2 / 10) {
         tmp = (nb2 % 10) + 48;
         add_buffer(&buffer, &tmp, 1);

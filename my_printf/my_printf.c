@@ -29,9 +29,9 @@ static int get_flags(char **buffer, char const *fmt, int *i, va_list args)
     if (fmt[j - 1] == '.')
         this_flags.precision = my_getnbr(fmt + j);
     for (; '0' <= fmt[j] && fmt[j] <= '9'; j++);
-    for (int k = 0; types[k].c;
-        !my_strncmp(types[k++].c, fmt + j, my_strlen(types[k].c)) &&
-        types[k - 1].f(buffer, args, &this_flags));
+    for (int k = 0; types[k].c; k++)
+        !my_strncmp(types[k].c, fmt + j, my_strlen(types[k].c)) &&
+        types[k].f(buffer, args, &this_flags);
     *i += ++j;
     return 0;
 }
