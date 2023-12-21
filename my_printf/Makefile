@@ -16,6 +16,8 @@ SRC	= my_revstr.c	\
 			my_put_nbr.c	\
 			my_strncat.c	\
 			my_getnbr.c	\
+			formats/p_format.c	\
+			formats/o_format.c	\
 			formats/a_format.c	\
 			formats/amaj_format.c	\
 			formats/e_format.c	\

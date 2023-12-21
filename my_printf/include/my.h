@@ -78,6 +78,10 @@ int s_format_f(char **, va_list, my_flags_t *);
 
 int u_format_f(char **, va_list, my_flags_t *);
 
+int p_format_f(char **, va_list, my_flags_t *);
+
+int o_format_f(char **, va_list, my_flags_t *);
+
 int n_format_f(char **, va_list, my_flags_t *);
 int hhn_format_f(char **, va_list, my_flags_t *);
 int hn_format_f(char **, va_list, my_flags_t *);
@@ -110,7 +114,7 @@ static my_struct_t const types[] = {
 //    {"f", f_format_f},
 //    {"F", F_format_f},
     {"u", u_format_f},
-//    {"o", o_format_f},
+    {"o", o_format_f},
 //    {"x", x_format_f},
 //    {"X", X_format_f},
     {"e", e_format_f},
@@ -119,7 +123,7 @@ static my_struct_t const types[] = {
 //    {"G", G_format_f},
     {"a", a_format_f},
     {"A", amaj_format_f},
-//    {"p", p_format_f},
+    {"p", p_format_f},
 //    {"%", mod_format_f},
     {NULL, NULL}
 };

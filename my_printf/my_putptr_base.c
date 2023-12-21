@@ -18,5 +18,5 @@ char *my_putptr_base(size_t n, char *base)
         add_buffer(&buf, base, 1);
     for (; n != 0; n /= len)
         add_buffer(&buf, base + n % len, 1);
-    return buf;
+    return my_revstr(buf);
 }
