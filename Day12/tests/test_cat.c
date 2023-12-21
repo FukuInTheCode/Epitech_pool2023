@@ -7,7 +7,8 @@
 
 #include "../include/my.h"
 
-int main(int argc, char *argv[])
+Test(cat, same_shit_as_cat_linuw)
 {
-    return cat(argc, argv);
+    
 }
+
