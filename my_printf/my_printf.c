@@ -7,10 +7,26 @@
 
 #include "include/my.h"
 
+
 static bool is_flags(char c)
 {
     return c == '#' || c == '0' ||
         c == ' ' || c == '+' || c == '-';
+}
+
+static int error_handling(char **buffer, char const *fmt, int *i)
+{
+    int j = 0;
+
+    for (; is_flags(fmt[j]); j++);
+    for (; '0' <= fmt[j] && fmt[j] <= '9'; j++);
+    j += (fmt[j] == '.');
+    for (; '0' <= fmt[j] && fmt[j] <= '9'; j++);
+    for (int k = 0; types[k].c; k++)
+        if (!my_strncmp(types[k].c, fmt, my_strlen(types[k].c)))
+            return 0;
+    add_buffer(buffer, "%", 1);
+    return 1;
 }
 
 static int get_types(char **buffer, char const *fmt,
@@ -31,6 +47,8 @@ static int get_flags(char **buffer, char const *fmt, int *i, va_list args)
         false, -1, -1};
     int j = 0;
 
+    if (error_handling(buffer, fmt, i) == 1)
+        return 0;
     for (; is_flags(fmt[j]); j++)
         for (int k = 0; flags[k].c; fmt[j] == flags[k++].c[0] &&
             flags[k - 1].f(&this_flags));
