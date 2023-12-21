@@ -5,18 +5,12 @@
 ** Placeholder
 */
 
+#include "../my.h"
 
-#include "my.h"
-
-int my_str_isalpha(char const *str)
+Test(my_str_islower, check_if_contain_just_lowercase)
 {
-    if (str[0] == '\0')
-        return 0;
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] < 'a' && 'z' > str[i])
-            return 0;
-        if (str[i] < 'A' && 'Z' > str[i])
-            return 0;
-    }
-    return 1;
+    cr_assert(my_str_isalpha("abc") == 1);
+    cr_assert(my_str_isalpha("abc3") == 0);
+    cr_assert(my_str_isalpha("abC") == 0);
 }
+
