@@ -5,7 +5,6 @@
 ** Placeholder
 */
 
-
 int my_compute_square_root(int nb)
 {
     if (nb <= 0)

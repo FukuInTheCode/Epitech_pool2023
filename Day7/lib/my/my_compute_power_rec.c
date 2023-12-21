@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "my.h"
+#include "../../include/my.h"
 
 static long my_recursif(int nb, int p, int i)
 {

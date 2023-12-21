@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "my.h"
+#include "../../include/my.h"
 
 static int show_char(char c)
 {

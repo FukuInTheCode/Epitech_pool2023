@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "my.h"
+#include "../../include/my.h"
 
 static int find_closest_perfect_sqrt(int nb)
 {

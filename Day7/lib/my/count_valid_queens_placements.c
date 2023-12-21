@@ -5,7 +5,7 @@
 ** Placeholder
 */
 
-#include "my.h"
+#include "../../include/my.h"
 
 static char is_valid(long *queens, int qount, int n, long qurrent)
 {
