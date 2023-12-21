@@ -22,7 +22,7 @@ linked_list_t *my_params_to_list(int ac, char const **av)
 {
     linked_list_t *ret = malloc(sizeof(linked_list_t));
 
-    if (ac <= 0 && ret == NULL)
+    if (ac <= 0 || ret == NULL)
         return NULL;
     ret->data = (void *)(av[0]);
     ret->next = NULL;
