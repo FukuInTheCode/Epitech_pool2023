@@ -41,6 +41,8 @@ static void do_loop(unsigned int size, int from, int to, char incr)
 
 void star(unsigned int size)
 {
+    if (size == 0)
+        return;
     for (int i = 0; i < 3 * size - 1 * (size != 1); i++)
         my_putchar(' ');
     my_putchar('*');
