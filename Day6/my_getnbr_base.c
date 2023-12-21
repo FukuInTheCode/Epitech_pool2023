@@ -11,7 +11,7 @@ static int find_power(char c, char const *base)
 {
     if (c == '-' || c == '+')
         return -2;
-    for (int i = 0; '\0' != base[i]; i++) {
+    for (int i = 0; base[i]; i++) {
         if (base[i] == c)
             return i;
     }
