@@ -5,17 +5,18 @@
 ** new my_put_nbr for myprintf
 */
 
-#include "include/my.h"
-
 char *my_put_nbr(int nb)
 {
     char *buffer = malloc(1);
     char tmp;
+    long nb2 = nb;
 
     buffer[0] = 0;
 
-    for (; nb != 0 ; nb = nb / 10) {
-        tmp = (nb % 10) + 48;
+    if (nb2 < 0)
+        nb2 = -nb2;
+    for (; nb2 != 0 ; nb2 = nb2 / 10) {
+        tmp = (nb2 % 10) + 48;
         add_buffer(&buffer, &tmp, 1);
     }
     my_revstr(buffer);

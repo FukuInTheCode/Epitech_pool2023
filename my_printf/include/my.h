@@ -17,8 +17,8 @@
     #include <errno.h>
     #include <stdbool.h>
     #include <stdlib.h>
-//    #include <criterion/criterion.h>
-//    #include <criterion/redirect.h>
+    #include <criterion/criterion.h>
+    #include <criterion/redirect.h>
 
     #define GETNBR_CHECK (is_int_stred(str[i]) || is_sign_stred(str[i]))
 
@@ -54,7 +54,6 @@ int my_getnbr(char const *);
 int my_strncmp(char const *, char const *, int);
 int c_format_f(char **, va_list, my_flags_t *);
 int add_buffer(char **, char *, int);
-char *my_put_nbr(int);
 
 static my_struct_t const types[] = {
     {"c", c_format_f},

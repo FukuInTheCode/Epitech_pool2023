@@ -9,5 +9,5 @@
 
 int di_format_f(char **buffer, va_list args, my_flags_t *flgs)
 {
-    return 0;
+
 }
