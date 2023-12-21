@@ -5,7 +5,7 @@
 ** square1.c
 */
 
-int draw(int x, int y, char *str)
+void draw(int x, int y, char *str)
 {
     my_putchar(str[2]);
     for (int i = 0; i <= x - 2; i++) {
@@ -27,5 +27,4 @@ int draw(int x, int y, char *str)
     }
     my_putchar(str[2]);
     my_putchar('\n');
-    return (1);
 }
