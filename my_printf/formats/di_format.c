@@ -51,13 +51,13 @@ int di_format_f(char **buffer, va_list args, my_flags_t *flgs)
     my_revstr(buf_di);
     tmp_len = my_strlen(buf_di);
     if (tmp_len < flgs->width) {
-        if (flgs->has_minus == 0)
-            my_revstr(buf_di);
+        (flgs->has_minus == 0) && my_revstr(buf_di);
         for (int i = 0; i < flgs->width - tmp_len; i++)
             add_buffer(&buf_di, " ", 1);
         if (flgs->has_minus == 0)
             my_revstr(buf_di);
     }
     add_buffer(buffer, buf_di, my_strlen(buf_di));
+    free(buf_di);
     return 0;
 }
