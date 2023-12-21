@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	@$(CC) $(CFLAGS) $(SRC) -c
+	@$(CC) $(CFLAGS) $(SRC) -I./include -c
 	@ar -rcs $(NAME) *.o
 	@rm -f *.o
 
