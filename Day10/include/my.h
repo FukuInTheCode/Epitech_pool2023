@@ -12,12 +12,11 @@
     #include <criterion/redirect.h>
     #include <stdio.h>
     #include <stdint.h>
-    #include "my_macro_abs.h"
+    #include "my_opp.h"
 
     #define MAX_INTEGER 2147483647
     #define MIN_INTEGER -2147483648
     #define GETNBR_CHECK (is_int_stred(str[i]) || is_sign_stred(str[i]))
-    #define INFO_T struct info_param
 
 void my_putchar(char);
 int my_isneg(int);
@@ -60,8 +59,6 @@ char *concat_params(int, char **);
 int my_show_word_array(char const **);
 char **my_str_to_word_array(char const *str);
 char *convert_base(char const *, char const *, char const *);
-struct info_param *my_params_to_array(int, char **);
-int my_show_param_array(INFO_T *const);
 int get_color(unsigned char, unsigned char, unsigned char);
 int swap_endian_color(int color);
 int count_valid_queens_placements(int);

@@ -5,21 +5,24 @@
 ** Placeholder
 */
 
-#include "include/my.h"
+#include "../include/my.h"
 
 int my_add(int a, int b)
 {
-    return a + b;
+    my_put_nbr(a + b);
+    return 0;
 }
 
 int my_sub(int a, int b)
 {
-    return a - b;
+    my_put_nbr(a - b);
+    return 0;
 }
 
 int my_mul(int a, int b)
 {
-    return a * b;
+    my_put_nbr(a * b);
+    return 0;
 }
 
 int my_mod(int a, int b)
@@ -30,7 +33,8 @@ int my_mod(int a, int b)
         write(2, err_msg, my_strlen(err_msg));
         return 84;
     }
-    return a % b;
+    my_put_nbr(a % b);
+    return 0;
 }
 
 int my_div(int a, int b)
@@ -41,5 +45,6 @@ int my_div(int a, int b)
         write(2, err_msg, my_strlen(err_msg));
         return 84;
     }
-    return a / b;
+    my_put_nbr(a / b);
+    return 0;
 }

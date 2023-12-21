@@ -5,22 +5,20 @@
 ** Placeholder
 */
 
-#include "include/my.h"
+#include "../include/my.h"
 
 static op_func find_op(char *op_str)
 {
-    for (int i = 0; op_str[i]; i++) {
-        if (op[i] == '+')
-            return my_add;
-        if (op[i] == '/')
-            return my_div;
-        if (op[i] == '%')
-            return my_mod;
-        if (op[i] == '-')
-            return my_sub;
-        if (op[i] == '*')
-            return my_mul;
-    }
+    if (op_str[0] == '+')
+        return my_add;
+    if (op_str[0] == '/')
+        return my_div;
+    if (op_str[0] == '%')
+        return my_mod;
+    if (op_str[0] == '-')
+        return my_sub;
+    if (op_str[0] == '*')
+        return my_mul;
     return NULL;
 }
 
@@ -30,8 +28,10 @@ static int do_op(char *av[])
     int n2 = my_getnbr(av[3]);
     op_func op = find_op(av[2]);
 
-    if (op == NULL)
-        return 0;
+    if (op == NULL) {
+        my_put_nbr(0);
+        return 84;
+    }
     return op(n1, n2);
 }
 
