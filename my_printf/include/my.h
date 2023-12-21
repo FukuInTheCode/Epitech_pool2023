@@ -126,9 +126,13 @@ static my_struct_t const types[] = {
     {"a", a_format_f},
     {"hha", a_format_f},
     {"ha", a_format_f},
+    {"la", a_format_f},
+    {"lla", a_format_f},
     {"A", amaj_format_f},
     {"hhA", amaj_format_f},
     {"hA", amaj_format_f},
+    {"lA", amaj_format_f},
+    {"llA", amaj_format_f},
     {"p", p_format_f},
 //    {"%", mod_format_f},
     {NULL, NULL}
