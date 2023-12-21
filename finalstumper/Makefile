@@ -22,16 +22,14 @@ CSFLAGS = -W -Wall -Wextra -I ./include
 
 all : $(NAME)
 
-lib :
+$(NAME) : $(OBJ)
 	make -C./lib/my re
-
-$(NAME) : lib $(OBJ)
 	gcc -o $(NAME) $(OBJ) -L lib/ -l my
 
 clean:
 	rm -f *.o
 
-fclean: clean all
+fclean: clean
 	rm -f libmy.a
 
 re : fclean all
